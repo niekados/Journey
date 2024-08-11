@@ -31,7 +31,7 @@
 - [Credits](#credits)
 - [Testing](#testing)
 
-## Inception
+## Project Inception
 
 Sometimes we have that pure and genuine connection with our journal, where we confide our deepest and truest secrets or our biggest and darkest fears. But what if keeping these thoughts in becomes too heavy? What if there is no one to share them with, or sharing them feels too scary? And what if sharing your stories, fears, and achievements could help and encourage others?
 
@@ -40,3 +40,33 @@ Imagine if there were a way to share your achievements safely and anonymously, w
 It's like a journey full of stories, strangers, and people we encounter on our way, whom we may never meet again. In your wanderings with strangers, sometimes your stories are the purest and truest, and they can be shared and left with strangers you will never meet again. We are wise and interesting, just sometimes too shy or lost to realize it. Talking things out is the best therapy, and Journey creates that space for us. 
 
 Journey is for the lonely, shy, scared, silent, brave, radiant, energetic, and loving. Journey is for you.
+
+## User Stories
+
+### Home Page
+- As a user, I want to read the website introduction on the homepage, so I can understand the purpose and ideas behind the website.
+- As a user, I want to access clear instructions on the homepage, so I can easily learn how to use the website.
+
+### Navigation & Layout (Base.html)
+- As a user, I want to find a navigation menu, so I can easily move between different sections of the website.
+- As a user, I want to see authentication links, so I can log in, register, or log out of my account as needed.
+- As a user, I want to access social links, so I can contact or learn more about the developer.
+- As a user, I want to click the website logo, so I can quickly return to the homepage from any page.
+
+### My Journey
+- As a user, I want to have an overview of all my journal entries, so I can easily access and manage them.
+- As a user, I want to mark specific journal entries as public, so I can share my thoughts or achievements with the community anonymously.
+- As a user, I want to update my journal entries, so I can make corrections or reflect changes in my thoughts.
+- As a user, I want to delete any of my journal entries, so I can remove content that I no longer wish to keep.
+
+### Journal Entry
+- As a user, I want to create a new journal entry, so I can document my daily experiences and thoughts.
+
+### Community Stories
+ - As a user, I want to read stories shared by other community members, so I can feel connected, find inspiration, or gain reassurance that I am not alone in my experiences.
+
+### Administrator
+
+- 
+- 
+- 
