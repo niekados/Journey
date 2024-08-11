@@ -67,9 +67,11 @@ Journey is for the lonely, shy, scared, silent, brave, radiant, energetic, and l
  - As a user, I want to read stories shared by other community members, so I can feel connected, find inspiration, or gain reassurance that I am not alone in my experiences.
 
 ### Administrator
-- 
-- 
-- 
+- As an administrator, I can update the homepage content, so that I can ensure the information and instructions presented to users are current and accurate.
+- As an administrator, I can review and approve user stories before they are published on the Community Stories page, so that I can prevent inappropriate content from being shared with the community.
+- As an administrator, I can read published user stories, so that I can monitor the content shared on the platform and ensure it aligns with the community guidelines.
+- As an administrator, I can update published user stories, so that I can make necessary edits or corrections to the content that has been shared.
+- As an administrator, I can delete published user stories, so that I can remove any content that violates the platform’s rules or is deemed inappropriate after it has been published.
 
 ## Strategy 
 
@@ -136,3 +138,21 @@ The Journey website is designed with a clear and consistent structure that enhan
 - **Journal Entry**
 
 <img src="documentation/wireframes/journal_entry.png" alt="Journal Entry" style="width:60%;">
+
+## Surface
+
+The Surface design of the Journey website creates a warm, natural, and welcoming atmosphere that aligns with the theme of journaling and personal reflection.
+
+### Colours
+
+<img src="documentation/wireframes/colors.png" alt="Colours" style="width:50%;">
+
+- **#FFC9B9** - This soft, warm color represents the sun setting at the end of a day, evoking a sense of calm and reflection. It’s used to create a soothing backdrop, symbolizing the peaceful moments when users sit down to journal.
+- **#0E3B02** - A deep green shade, reminding of forest treetops and the rich greenness of moss. This color adds depth and a connection to nature, grounding the user experience in a sense of tranquility and growth.
+- **#B7D799** - A lighter green used for accents. This color highlights elements and draws attention in a way that feels fresh, complementing the deeper green tones.
+
+### Typography
+
+- **[Sacramento](https://fonts.google.com/specimen/Sacramento)** - A beautiful handwriting font from Google Fonts, Sacramento is used exclusively for the website logo. Its elegant style captures the essence of writing by hand, making it a perfect representation of journaling experience.
+- **[Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono)** - This typewriter style font is used for headers, complimenting the journaling theme. While maintaining a clear and readable style, Cutive Mono adds a nostalgic touch that reminds users of old-school typewritten books.
+- **[Work Sans](https://fonts.google.com/specimen/Work+Sans)** - As the general-purpose font for body text, Work Sans offers a clean and modern reading experience. Its slightly rounded edges and simple style make it easy on the eyes, while still carrying a subtle hint of the typewriter influence from Cutive Mono, ensuring a smooth visual transition.
