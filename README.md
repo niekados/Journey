@@ -116,3 +116,23 @@ The Journey website is designed with a clear and consistent structure that enhan
 - **Anonymous Sharing:** When marking an entry as public, users go through a confirmation process that ensures their story will be shared anonymously with the community. This ensures that users can share their experiences without fear of identity exposure.
 - **Form Validation:** The forms for creating or editing journal entries include validation checks, alerting users to issues such as missing content or invalid inputs before submission.
 - **Deletion Confirmation:** When a user requests to delete a journal entry, a delete confirmation will appear, asking the user to confirm the deletion. This extra step ensures that entries are not accidentally deleted.
+
+## Skeleton
+
+### Wireframes
+
+- **Home page**
+
+<img src="documentation/wireframes/home.png" alt="Home Page" style="width:60%;">
+
+- **Stories**
+
+<img src="documentation/wireframes/stories.png" alt="Stories" style="width:60%;">
+
+- **My Journey**
+
+<img src="documentation/wireframes/my_journey.png" alt="My Journey" style="width:60%;">
+
+- **Journal Entry**
+
+<img src="documentation/wireframes/journal_entry.png" alt="Journal Entry" style="width:60%;">
