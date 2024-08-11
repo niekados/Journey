@@ -8,6 +8,7 @@
 
 - [Project Inception](#project-inception)
 - [User Stories](#user-stories)
+- [Strategy](#strategy)
 - [Scope](#scope)
 - [Structure](#structure)
 - [Skeleton](#skeleton)
@@ -66,7 +67,16 @@ Journey is for the lonely, shy, scared, silent, brave, radiant, energetic, and l
  - As a user, I want to read stories shared by other community members, so I can feel connected, find inspiration, or gain reassurance that I am not alone in my experiences.
 
 ### Administrator
+- 
+- 
+- 
 
-- 
-- 
-- 
+## Strategy 
+
+The Journey website focuses on addressing the emotional and psychological needs of its users. The goal of the website is to provide a safe and supportive space for personal journaling, allowing users to reflect on their daily experiences, track their emotions, and connect with a community in an anonymous way. The objectives of Journey are as follows:
+
+- **User Empowerment:** Empower users by providing a platform where they can document their thoughts, moods, and experiences, promoting self-reflection and personal growth.
+- **Anonymity and Safety:** Users can share their stories and experiences anonymously, creating a safe environment free from judgment or fear of exposure.
+- **Community:** Create a sense of community by enabling users to share their stories with others, helping them feel less isolated and more connected to people who are experiencing similar challenges.
+- **Ease of Use:** Design the website to be intuitive and user-friendly, so users can easily access features, navigate the platform, and focus on journaling without distractions.
+- **Emotional Well-being:** Support the emotional well-being by providing a private space to analyze and constructively document their thoughts and feelings.
