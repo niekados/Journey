@@ -44,34 +44,47 @@ Journey is for the lonely, shy, scared, silent, brave, radiant, energetic, and l
 
 ## User Stories
 
-### Home Page
-- As a user, I want to read the website introduction on the homepage, so I can understand the purpose and ideas behind the website.
-- As a user, I want to access clear instructions on the homepage, so I can easily learn how to use the website.
+### Epic 1: User Authentication
+As a user, I want to create an account and log in, so that I can have a private journaling experience.
 
-### Navigation & Layout (Base.html)
-- As a user, I want to find a navigation menu, so I can easily move between different sections of the website.
-- As a user, I want to see authentication links, so I can log in, register, or log out of my account as needed.
-- As a user, I want to access social links, so I can contact or learn more about the developer.
-- As a user, I want to click the website logo, so I can quickly return to the homepage from any page.
+- **As a user**, I want to register for an account, so that I can start using the personal journal.
+- **As a user**, I want to log in to my account, so that I can access my private journal entries.
+- **As a user**, I want to log out of my account, so that I can ensure my journal entries are secure when I'm finished.
 
-### My Journey
-- As a user, I want to have an overview of all my journal entries, so I can easily access and manage them.
-- As a user, I want to mark specific journal entries as public, so I can share my thoughts or achievements with the community anonymously.
-- As a user, I want to update my journal entries, so I can make corrections or reflect changes in my thoughts.
-- As a user, I want to delete any of my journal entries, so I can remove content that I no longer wish to keep.
+### Epic 2: Homepage Experience
+As a user, I want to understand the purpose of Journey.
 
-### Journal Entry
-- As a user, I want to create a new journal entry, so I can document my daily experiences and thoughts.
+- **As a user**, I want to read the website introduction on the homepage, so I can understand the purpose and ideas behind the website.
+- **As a user**, I want to access instructions on the homepage, so I can easily learn how to use the website.
 
-### Community Stories
- - As a user, I want to read stories shared by other community members, so I can feel connected, find inspiration, or gain reassurance that I am not alone in my experiences.
+### Epic 3: Navigation & Layout
+As a user, I want a smooth navigation experience across the site, so I can access features easily.
 
-### Administrator
-- As an administrator, I can update the homepage content, so that I can ensure the information and instructions presented to users are current and accurate.
-- As an administrator, I can review and approve user stories before they are published on the Community Stories page, so that I can prevent inappropriate content from being shared with the community.
-- As an administrator, I can read published user stories, so that I can monitor the content shared on the platform and ensure it aligns with the community guidelines.
-- As an administrator, I can update published user stories, so that I can make necessary edits or corrections to the content that has been shared.
-- As an administrator, I can delete published user stories, so that I can remove any content that violates the platform’s rules or is deemed inappropriate after it has been published.
+- **As a user**, I want to find a navigation menu, so I can easily move between different sections of the website.
+- **As a user**, I want to access social links, so I can contact or learn more about the developer.
+- **As a user**, I want to click the website logo, so I can quickly return to the homepage from any page.
+
+### Epic 4: My Journal
+As a user, I want to view and manage my journal entries.
+
+- **As a user**, I want to have an overview of all my journal entries, so I can easily access and manage them.
+- **As a user**, I want to create a new journal entry, so I can document my thoughts and moods.
+- **As a user**, I want to update my journal entries, so I can make corrections.
+- **As a user**, I want to delete any of my journal entries, so I can remove content that I don't want to keep.
+- **As a user**, I can mark journal entries as public, so I can share my pain or achievements with the community anonymously.
+
+### Epic 5: Community Stories
+As a user, I want to connect with others through shared experiences.
+
+- **As a user**, I want to read stories shared by other community members, so I can feel connected, find inspiration, or gain reassurance that I am not alone in my experiences.
+
+### Epic 6: Administrator Controls
+As an administrator, I want to manage and monitor content, so I can maintain a safe environment.
+
+- **As an administrator**, I can update the homepage content, so that I can ensure the information and instructions presented to users are current and accurate.
+- **As an administrator**, I can review and approve user stories before they are published on the Community Stories page, so that I can prevent unsafe content from being shared with the community.
+- **As an administrator**, I can update published user stories, so that I can make necessary edits or corrections to the content that has been shared.
+- **As an administrator**, I can delete published user stories, so that I can remove any content that violates the platform’s rules after it has been published.
 
 ## Strategy 
 
