@@ -49,7 +49,15 @@ a.nav-link {
     font-family: var(--title-font);
     color: var(--moss-green);
     font-size: 2rem;
+}
+
+.active {
     text-decoration: underline;
+}
+
+/* form */
+.form {
+    width: 100%;
 }
 
 /* buttons */
