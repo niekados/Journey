@@ -41,7 +41,7 @@ class AddJournalEntry(LoginRequiredMixin, CreateView):
 
         # Save the journal entry first
         response = super().form_valid(form)
-        messages.success(self.request, "Journal Entry Added!")
+        messages.success(self.request, "Journal entry added!")
 
         # After saving, check if it's public and publish as a story
         if form.instance.is_public:
@@ -91,3 +91,47 @@ def delete_journal_entry(request, pk):
             'journal/journal_entry_confirm_delete.html',
             {'journal_entry': journal_entry}
         )
+
+
+@login_required
+def edit_journal_entry(request, pk):
+    """
+    Edit a journal entry based on its primary key (pk).
+    """
+    # Get the journal entry or return a 404 if it doesn't exist
+    journal_entry = get_object_or_404(JournalEntry, pk=pk)
+
+    # Check if the logged-in user is not the owner of the journal entry
+    if journal_entry.user != request.user:
+        messages.error(
+            request,
+            "You are not authorized to edit this journal entry."
+        )
+        return redirect('journal')
+
+    # Process the form data if the request method is POST
+    if request.method == "POST":
+        form = JournalEntryForm(data=request.POST, instance=journal_entry)
+
+        if form.is_valid():
+            # Save the updated journal entry
+            form.save()
+
+            # Publish or unpublish the entry based on its current status
+            if journal_entry.is_public:
+                journal_entry.publish_as_story()
+            else:
+                journal_entry.unpublish_story()
+
+            messages.success(request, "Journal entry updated!")
+            return redirect('journal')
+        else:
+            messages.error(
+                request,
+                "There was an error while updating the Journal Entry"
+            )
+    else:
+        # Render the form with the current journal entry data for a GET request
+        form = JournalEntryForm(instance=journal_entry)
+
+    return render(request, "journal/edit_journal_entry.html", {"form": form})
