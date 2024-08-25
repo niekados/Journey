@@ -30,7 +30,11 @@ class JournalEntry(models.Model):
         on_delete=models.CASCADE,
         related_name="journal_author"
     )
-    mood = models.IntegerField(choices=MOOD_CHOICES, default="normal")
+    mood = models.CharField(
+        max_length=10,
+        choices=MOOD_CHOICES,
+        default="normal"
+    )
     day_description = models.CharField(max_length=255, blank=False, null=False)
     content = models.TextField()
     grateful_for = models.TextField(blank=True)
