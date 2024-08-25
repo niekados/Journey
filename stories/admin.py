@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import StoryEntry
 
-# Register your models here.
+
+@admin.register(StoryEntry)
+class StoryEntryAdmin(admin.ModelAdmin):
+    list_display = ('content', 'status', 'published_on')
+    list_filter = ('status', 'published_on',)
