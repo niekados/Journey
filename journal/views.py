@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import ListView, CreateView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib import messages
 from .models import JournalEntry
 from .forms import JournalEntryForm
@@ -47,3 +47,15 @@ class AddJournalEntry(LoginRequiredMixin, CreateView):
             form.instance.publish_as_story()
 
         return response
+
+
+class JournalDetail(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+    """
+    View for displaying detailed journal entry.
+    """
+    template_name = "journal/journal_detail.html"
+    model = JournalEntry
+    context_object_name = "journal_entry_detail"
+
+    def test_func(self):
+        return self.request.user == self.get_object().user
