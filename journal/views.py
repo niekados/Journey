@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import JournalEntry
+from .forms import JournalEntryForm
 
 
 class Journal(LoginRequiredMixin, ListView):
@@ -11,3 +12,4 @@ class Journal(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return JournalEntry.objects.filter(user=self.request.user).order_by('-created_on')
+

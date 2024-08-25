@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class JournalEntry(models.Model):
     """
-    Represents a journal entry made by a user. Each entry can be 
+    Represents a journal entry made by a user. Each entry can be
     marked as public or private.
 
     Attributes:
