@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Journal Entry{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center">Confirm delete</h1>
+    <div>
+        <form method="POST" class="text-center">
+            {% csrf_token %}
+            <p>Are you sure you want to delete entry created on {{ object.created_on }}</p>
+            <input type="submit" value="Confirm" class="btn red-button">
+        </form>
+    </div>
+</div>
+{% endblock %}
