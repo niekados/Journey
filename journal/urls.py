@@ -3,7 +3,8 @@ from .views import (
     Journal,
     AddJournalEntry,
     JournalDetail,
-    delete_journal_entry
+    delete_journal_entry,
+    edit_journal_entry
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
         delete_journal_entry,
         name="delete_journal_entry"
     ),
+    path("edit/<int:pk>/", edit_journal_entry, name="edit_journal_entry"),
 ]
