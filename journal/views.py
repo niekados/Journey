@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, CreateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import JournalEntry
 from .forms import JournalEntryForm
@@ -59,3 +60,34 @@ class JournalDetail(LoginRequiredMixin, UserPassesTestMixin, DetailView):
 
     def test_func(self):
         return self.request.user == self.get_object().user
+
+
+@login_required
+def delete_journal_entry(request, pk):
+    """
+    Delete a journal entry based on its primary key (pk).
+    """
+    # Get the journal entry or return a 404 if it doesn't exist
+    journal_entry = get_object_or_404(JournalEntry, pk=pk)
+
+    if request.method == "POST":
+        # Check if the logged-in user is the owner of the journal entry
+        if journal_entry.user == request.user:
+            # Delete the journal entry
+            journal_entry.delete()
+            messages.success(request, "Journal entry deleted!")
+            return redirect('journal')
+        else:
+            # Add an error message if the user doesn't have permission
+            messages.error(
+                request,
+                "You can only delete your own journal entries!"
+                )
+            return redirect('journal')
+    else:
+        # Render the confirmation template
+        return render(
+            request,
+            'journal/journal_entry_confirm_delete.html',
+            {'journal_entry': journal_entry}
+        )
