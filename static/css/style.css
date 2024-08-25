@@ -65,7 +65,6 @@ a.nav-link {
 }
 
 /* buttons */
-
 .button {
     border: 0.5px solid var(--moss-green);
     padding: 7px 15px; 
@@ -102,7 +101,6 @@ a.nav-link {
 }
 
 /* cards */
-
 .card-header {
     background-color: rgba(255, 201, 185, 0.1); 
     color: var(--moss-green); 
@@ -114,7 +112,6 @@ a.nav-link {
 }
 
 /* footer */
-
 footer {
     flex-shrink: 0;
     background-color: var(--light-green); 

@@ -11,6 +11,15 @@ class StoryEntry(models.Model):
     """
     Represents a story shared by a user. Each story is associated with a
     specific journal entry and can be published or pending approval.
+
+    Attributes:
+        journal_entry (OneToOneField): A relationship with JournalEntry model.
+        content (TextField): The content of the story shared by the user.
+        published_on (DateTimeField): Timestamp when the story was published.
+        status (IntegerField): The publication status of the story.
+        Choices are:
+        - 0: Pending
+        - 1: Published
     """
     journal_entry = models.OneToOneField(
         JournalEntry, on_delete=models.CASCADE
