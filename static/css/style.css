@@ -51,8 +51,12 @@ a.nav-link {
     font-size: 2rem;
 }
 
+.navbar-nav .nav-link.active {
+    color: var(--moss-green);
+}
+
 .active {
-    text-decoration: underline;
+    border-bottom: 1px solid var(--moss-green);
 }
 
 /* form */
