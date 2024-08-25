@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Journal Entry{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" class="p-2">
+        <h1 class="text-center">Add Journal Entry</h1>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="text-center">
+            <button type="submit" class="button green-button mt-2 mb-5">Add Entry</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
