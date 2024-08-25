@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* fonts */
+    --logo-font: "Sacramento", system-ui;
+    --title-font: "Cutive Mono", system-ui;
+    --main-font: "Work Sans", sans-serif;
+
+    /* colors */
+    --sunset: #ffc9b9;
+    --moss-green: #0e3b02;
+    --light-green: #b7d799;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--main-font);
+    color: var(--moss-green);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title-font);
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* header */
+.logo {
+    font-family: var(--logo-font);
+    font-size: 3rem; 
+}
+
+.navbar {
+    background-color: var(--sunset);
+}
+
+a.nav-link {
+    font-family: var(--title-font);
+    color: var(--moss-green);
+    font-size: 2rem;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--moss-green);
+}
+
+.active {
+    border-bottom: 1px solid var(--moss-green);
+}
+
+/* form */
+.form {
+    width: 100%;
+}
+
+/* buttons */
+.button {
+    border: 0.5px solid var(--moss-green);
+    padding: 7px 15px; 
+    margin: 5px;
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-decoration: none;
+    font-family: var(--main-font);
+    font-size: 1.1rem;
+    transition: border-radius 0.2s ease-in-out ,box-shadow 0.2s ease-in-out;
+}
+
+.button:hover {
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    transform: translateY(-3px); 
+}
+
+.green-button {
+    background-color: var(--light-green);
+    color: var(--moss-green);
+}
+
+.red-button {
+    background-color: var(--sunset); 
+    color: var(--moss-green); 
+}
+
+.bold-button {
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 5px 13px;
+    border-width: 1px;
+}
+
+/* cards */
+.card-header {
+    background-color: rgba(255, 201, 185, 0.1); 
+    color: var(--moss-green); 
+}
+
+.journal-card {
+    text-decoration: none;
+    color: var(--moss-green);
+}
+
+/* footer */
+footer {
+    flex-shrink: 0;
+    background-color: var(--light-green); 
+    padding: 20px 0; 
+    text-align: center; 
+    width: 100%; 
+    
+}
+
+.footer a {
+    text-decoration: none; 
+}
+
+.footer i {
+    color: var(--moss-green);
+    margin: 0 3rem;
+    padding: 7px;
+    font-size: 2rem; 
+    
+    border: 1.5px solid transparent; 
+    border-radius: 25px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.footer i:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+}
+
