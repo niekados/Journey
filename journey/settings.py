@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     # apps
     'journal',
     'stories',
+    'home',
 
     # crispy forms
     'crispy_forms',
