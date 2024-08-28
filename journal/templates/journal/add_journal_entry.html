@@ -5,14 +5,14 @@ Add Journal Entry
 {% endblock %}
 
 {% block content %}
+<h1 class="text-center m-5">Add Journal Entry</h1>
 <div class="container">
-    <form method="POST" class="p-2">
-        <h1 class="text-center">Add Journal Entry</h1>
+    <form method="POST" class="p-2 form-width d-flex flex-column m-auto">
         {% csrf_token %}
         {{ form|crispy }}
-        <div class="text-center">
+        <div class="text-center mb-5">
             <a href="{% url 'journal' %}" class="my-button red-button mt-2"><i class="fa-solid fa-xmark"></i> Cancel</a>
-            <button type="submit" class="my-button green-button mt-2 mb-5"><i class="fa-regular fa-floppy-disk"></i>
+            <button type="submit" class="my-button green-button mt-2"><i class="fa-regular fa-floppy-disk"></i>
                 Save</button>
         </div>
     </form>

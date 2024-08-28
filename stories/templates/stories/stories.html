@@ -6,14 +6,14 @@ Stories
 
 {% block content %}
 <!-- Header -->
-<h1 class="text-center p-2 mt-4">Community Stories</h1>
+<h1 class="text-center m-5">Community Stories</h1>
 
 <div class="container">
     <div class="row d-flex justify-content-center">
         {% for story in stories_list %}
         <div class="col-10 p-5">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header green-header">
                     <div>{{ story.published_on }}</div>
                 </div>
                 <div class="card-body">
