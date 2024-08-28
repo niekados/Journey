@@ -30,8 +30,9 @@
     <header>
         {% with request.resolver_match.url_name as url_name %}
         <nav class="navbar navbar-expand-lg">
+            <!-- Logo -->
             <div class="container-fluid">
-                <a class="navbar-brand logo" href="#">Journey</a>
+                <a class="navbar-brand logo" href="{% url 'home' %}">Journey</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -41,7 +42,7 @@
                 <!-- Navbar Links -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link {% if url_name == 'home' %}active{% endif %}" href="">Home</a>
+                        <a class="nav-link {% if url_name == 'home' %}active{% endif %}" href="{% url 'home' %}">Home</a>
                         <a class="nav-link {% if url_name == 'stories' %}active{% endif %}"
                             href="{% url 'stories' %}">Stories</a>
 

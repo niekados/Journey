@@ -3,6 +3,7 @@ from django.views.generic import ListView, CreateView, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Q
 from .models import JournalEntry
 from .forms import JournalEntryForm
 
@@ -16,13 +17,27 @@ class Journal(LoginRequiredMixin, ListView):
     model = JournalEntry
     context_object_name = "journal_entries_list"
 
-    def get_queryset(self):
-        """Return the list of journal entries for the logged-in user."""
-        return (
-            JournalEntry.objects
-            .filter(user=self.request.user)
-            .order_by('-created_on')
-        )
+    def get_queryset(self, **kwargs):
+        """
+        Filter the queryset to include the logged-in user's journal entries
+        and provide search functionality.
+        """
+        query = self.request.GET.get('journal_query')
+
+        # Filter the user's own entries
+        queryset = JournalEntry.objects.filter(user=self.request.user)
+
+        # Apply search filters if a search query is provided
+        if query:
+            queryset = queryset.filter(
+                Q(day_description__icontains=query) |
+                Q(content__icontains=query) |
+                Q(grateful_for__icontains=query) |
+                Q(improve_on__icontains=query)
+            )
+
+        # Order the results by creation date, most recent first
+        return queryset.order_by('-created_on')
 
 
 class AddJournalEntry(LoginRequiredMixin, CreateView):

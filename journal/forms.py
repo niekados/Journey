@@ -23,4 +23,5 @@ class JournalEntryForm(forms.ModelForm):
             "content": "Journal entry",
             "grateful_for": "What are you grateful for today?",
             "improve_on": "What should you improve on?",
+            "is_public": "Share your entry with the community?"
         }

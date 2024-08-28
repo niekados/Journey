@@ -11,9 +11,11 @@ Delete Journal Entry
     <div>
         <form method="POST" class="text-center">
             {% csrf_token %}
-            <p>Are you sure you want to delete entry created on {{ object.created_on }}</p>
-            <a href="{% url 'journal' %}" class="button green-button">Cancel</a>
-            <input type="submit" value="Confirm" class="button red-button">
+            <p>Are you sure you want to delete entry created on {{ journal_entry.created_on }}</p>
+            <a href="{% url 'journal' %}" class="button red-button"><i class="fa-solid fa-xmark"></i> Cancel</a>
+            <button type="submit" class="button green-button">
+                <i class="fa-solid fa-check"></i> Confirm
+            </button>
         </form>
         
     </div>
