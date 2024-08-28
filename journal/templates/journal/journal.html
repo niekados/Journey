@@ -12,7 +12,7 @@ Journal
 <form class="form-inline w-25" method="GET" action="{% url 'journal' %}">
     <input class="form-control mr-sm-2" name="journal_query" type="search" placeholder="Search" aria-label="Search">
     <button class="button my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-  </form>
+</form>
 
 <!-- Add new journal entry button -->
 <div class="container w-75">
@@ -52,8 +52,10 @@ Journal
                             {% endif %}
                         </h3>
                         <p class="card-text mb-3">{{ journal_entry.content }}</p>
-                        <a href="{% url 'edit_journal_entry' journal_entry.id %}" class="button green-button"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
-                        <a href="{% url 'delete_journal_entry' journal_entry.id %}" class="button red-button"><i class="fa-regular fa-trash-can"></i> Delete</a>
+                        <a href="{% url 'edit_journal_entry' journal_entry.id %}" class="button green-button"><i
+                                class="fa-regular fa-pen-to-square"></i> Edit</a>
+                        <a href="{% url 'delete_journal_entry' journal_entry.id %}" class="button red-button"><i
+                                class="fa-regular fa-trash-can"></i> Delete</a>
                     </div>
                 </div>
             </a>

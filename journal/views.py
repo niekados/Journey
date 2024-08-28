@@ -96,7 +96,7 @@ def delete_journal_entry(request, pk):
             # Add an error message if the user doesn't have permission
             messages.error(
                 request,
-                "You can only delete your own journal entries!"
+                "You are not authorized to delete this journal entry!"
                 )
             return redirect('journal')
     else:

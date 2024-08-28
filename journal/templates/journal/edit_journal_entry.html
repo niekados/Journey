@@ -11,7 +11,8 @@ Edit Journal Entry
         {% csrf_token %}
         {{ form|crispy }}
         <div class="text-center">
-            <button type="submit" class="button green-button mt-2">Edit Entry</button>
+            <a href="{% url 'journal' %}" class="button red-button mt-2"><i class="fa-solid fa-xmark"></i> Cancel</a>
+            <button type="submit" class="button green-button mt-2"><i class="fa-regular fa-floppy-disk"></i> Save</button>
         </div>
     </form>
 </div>

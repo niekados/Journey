@@ -66,6 +66,7 @@ a.nav-link {
 
 /* buttons */
 .button {
+    display: inline-block;
     border: 0.5px solid var(--moss-green);
     padding: 7px 15px; 
     margin: 5px;

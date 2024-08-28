@@ -36,8 +36,8 @@ Journal Entry
         </small>
 
         {% if journal_entry_detail.user == request.user %}
-        <a href="{% url 'edit_journal_entry' journal_entry_detail.id %}" class="button green-button">Edit</a>
-        <a href="{% url 'delete_journal_entry' journal_entry_detail.id %}" class="button red-button">Delete</a>
+        <a href="{% url 'edit_journal_entry' journal_entry_detail.id %}" class="button green-button"><i class="fa-regular fa-pen-to-square"></i> Edit</a>
+        <a href="{% url 'delete_journal_entry' journal_entry_detail.id %}" class="button red-button"><i class="fa-regular fa-trash-can"></i> Delete</a>
         {% endif %}
     </div>
 </div>
