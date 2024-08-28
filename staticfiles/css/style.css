@@ -65,6 +65,10 @@ a.nav-link {
     text-underline-offset: 10px;  
 }
 
+.short-space {
+    word-spacing: -10px;
+}
+
 /* messages */
 .alert {
     transition: opacity 0.5s ease-out;
@@ -75,7 +79,7 @@ a.nav-link {
 }
 
 /* form */
-.form {
+.form-width {
     width: 100%;
 }
 
@@ -134,7 +138,6 @@ footer {
     padding: 20px 0; 
     text-align: center; 
     width: 100%; 
-    
 }
 
 .footer a {
@@ -156,3 +159,46 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
 }
 
+/* media queries */
+
+/* Tablets and larger (768px and larger) */
+@media screen and (min-width: 768px) {
+
+    /* form */
+.form-width {
+    width: 90%;
+}
+
+/* container */
+.container-width {
+    width: 80%;
+}
+}
+
+/* Laptops and larger (992px and larger) */
+@media screen and (min-width: 992px) {
+
+    /* form */
+.form-width {
+    width: 50%;
+}
+
+/* container */
+.container-width {
+    width: 60%;
+}
+}
+
+/* Desktops and larger (1200px and larger) */
+@media screen and (min-width: 1200px) {
+
+/* form */
+.form-width {
+    width: 40%;
+}
+
+/* container */
+.container-width {
+    width: 50%;
+}
+}

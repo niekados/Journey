@@ -5,10 +5,12 @@
 {% block title %}{% trans "Sign In" %}{% endblock title %}
 
 {% block content %}
-<div class="container text-center">
-  <h1>{% trans "Sign In" %}</h1>
 
-  <p>{% blocktrans %}If you have not created an account yet, then please
+<h1 class="text-center m-5">{% trans "Sign In" %}</h1>
+
+<div class="container form-width mb-5">
+
+  <p class="text-center ">{% blocktrans %}If you have not created an account yet, then please
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
   <form class="form p-2" method="POST" action="{% url 'account_login' %}">
@@ -17,8 +19,10 @@
     {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-    <button class="my-button green-button" type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> {% trans "Sign In" %}</button>
+    <div class="text-center">
+    <button class="my-button green-button mb-3" type="submit"><i class="fa-solid fa-arrow-right-to-bracket"></i> {% trans "Sign In" %}</button>
     <a class="secondaryAction d-block" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+  </div>
   </form>
 </div>
 {% endblock content %}
