@@ -38,7 +38,8 @@ main {
 /* header */
 .logo {
     font-family: var(--logo-font);
-    font-size: 3rem; 
+    font-size: 3rem;
+    margin-left: 5vw;
 }
 
 .navbar {
@@ -49,6 +50,8 @@ a.nav-link {
     font-family: var(--title-font);
     color: var(--moss-green);
     font-size: 2rem;
+    margin-right: 5vw;
+    text-align: right;
 }
 
 .navbar-nav .nav-link.active {
@@ -56,7 +59,10 @@ a.nav-link {
 }
 
 .active {
-    border-bottom: 1px solid var(--moss-green);
+    text-decoration: underline;
+    text-decoration-color: (--moss-green);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 10px;  
 }
 
 /* messages */
