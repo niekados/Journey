@@ -65,7 +65,7 @@
 
         <!-- Messages -->
         {% if messages %}
-        <div class="messages">
+        <div class="messages text-center">
             {% for message in messages %}
             <div class="alert alert-dismissible fade show {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert">
                 {{ message | safe }}

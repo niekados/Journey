@@ -6,22 +6,27 @@ Journal
 
 {% block content %}
 <!-- Header -->
-<h1 class="text-center p-2 mt-4">My Journal</h1>
+<h1 class="text-center p-2 m-5">My Journal</h1>
 
-<!-- Search box -->
-<form class="form-inline w-25" method="GET" action="{% url 'journal' %}">
-    <input class="form-control mr-sm-2" name="journal_query" type="search" placeholder="Search" aria-label="Search">
-    <button class="button my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
-</form>
 
-<!-- Add new journal entry button -->
-<div class="container w-75">
-    <div class="d-flex justify-content-end">
-        <a href="{% url 'add_journal_entry' %}" class="button green-button bold-button" title="Create new entry"><i
-                class="fa-solid fa-plus"></i></a>
+<div class="container w-75 d-flex flex-wrap m-auto">
+        <!-- Search box -->
+        <div class="col-sm-12 col-md-7 d-flex m-auto justify-content-center">
+            <form class="d-flex w-100" role="search" method="GET" action="{% url 'journal' %}">
+                <input class="form-control me-2" name="journal_query" type="search" placeholder="Search" aria-label="Search">
+                <button class="my-button green-button bold-button" type="submit">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Add new journal entry button -->
+        <div class="col-sm-12 m-auto col-md-4 d-flex justify-content-center">
+            <a href="{% url 'add_journal_entry' %}" class="my-button green-button" title="Create new entry">
+                <i class="fa-solid fa-plus"></i> New entry</a>
+        </div>
     </div>
 </div>
-
 <!-- Journal entry list -->
 <div class="container">
     <div class="row d-flex justify-content-center">
@@ -52,9 +57,9 @@ Journal
                             {% endif %}
                         </h3>
                         <p class="card-text mb-3">{{ journal_entry.content }}</p>
-                        <a href="{% url 'edit_journal_entry' journal_entry.id %}" class="button green-button"><i
+                        <a href="{% url 'edit_journal_entry' journal_entry.id %}" class="my-button green-button"><i
                                 class="fa-regular fa-pen-to-square"></i> Edit</a>
-                        <a href="{% url 'delete_journal_entry' journal_entry.id %}" class="button red-button"><i
+                        <a href="{% url 'delete_journal_entry' journal_entry.id %}" class="my-button red-button"><i
                                 class="fa-regular fa-trash-can"></i> Delete</a>
                     </div>
                 </div>

@@ -59,13 +59,22 @@ a.nav-link {
     border-bottom: 1px solid var(--moss-green);
 }
 
+/* messages */
+.alert {
+    transition: opacity 0.5s ease-out;
+}
+
+.fade.show {
+    opacity: 0.8;
+}
+
 /* form */
 .form {
     width: 100%;
 }
 
 /* buttons */
-.button {
+.my-button {
     display: inline-block;
     border: 0.5px solid var(--moss-green);
     padding: 7px 15px; 
