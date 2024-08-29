@@ -8,10 +8,10 @@ Journal
 <!-- Header -->
 <h1 class="text-center m-5">My Journal</h1>
 
-
 <div class="container container-width d-flex flex-wrap space-between m-auto mb-5">
+
     <!-- Search box -->
-    <div class="col-sm-12 col-md-7 d-flex m-auto justify-content-start">
+    <div class="col-12 col-md-7 d-flex m-auto justify-content-center justify-content-md-start">
         <form class="d-flex w-100" role="search" method="GET" action="{% url 'journal' %}">
             <input class="form-control me-2" name="journal_query" type="search" placeholder="Search"
                 aria-label="Search">
@@ -22,8 +22,8 @@ Journal
     </div>
 
     <!-- Add new journal entry button -->
-    <div class="col-sm-12 m-auto col-md-4 d-flex justify-content-end">
-        <a href="{% url 'add_journal_entry' %}" class="my-button green-button" title="Create new entry">
+    <div class="col-12 col-md-5 m-auto d-flex d-column justify-content-center justify-content-md-end">
+        <a href="{% url 'add_journal_entry' %}" class="my-button green-button mt-4 mt-md-0" title="Create new entry">
             <i class="fa-solid fa-plus"></i> New entry</a>
     </div>
 </div>
