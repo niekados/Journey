@@ -166,10 +166,9 @@ footer {
 
 .footer i {
     color: var(--moss-green);
-    margin: 0 3rem;
+    margin: 0 1rem;
     padding: 7px;
     font-size: 2rem; 
-    
     border: 1.5px solid transparent; 
     border-radius: 25px;
     transition: box-shadow 0.2s ease-in-out;
@@ -193,6 +192,11 @@ footer {
 .container-width {
     width: 80%;
 }
+
+/* footer */
+.footer i {
+    margin: 0 2rem;
+}
 }
 
 /* Laptops and larger (992px and larger) */
@@ -207,6 +211,11 @@ footer {
 .container-width {
     width: 60%;
 }
+
+/* footer */
+.footer i {
+    margin: 0 3rem;
+}
 }
 
 /* Desktops and larger (1200px and larger) */
@@ -220,5 +229,10 @@ footer {
 /* container */
 .container-width {
     width: 50%;
+}
+
+/* footer */
+.footer i {
+    margin: 0 5rem;
 }
 }
