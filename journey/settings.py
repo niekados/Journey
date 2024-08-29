@@ -11,8 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 import dj_database_url
+from django.contrib.messages import constants as message_constants
+import os
 if os.path.isfile('env.py'):
     import env
 
@@ -79,6 +80,15 @@ DJRICHTEXTFIELD_CONFIG = {
         ],
         'format_tags': 'p;h1;h2;h3'
     }
+}
+
+# Convert messages tags to match Bootstrap styling
+MESSAGE_TAGS = {
+    message_constants.DEBUG: "alert-info",
+    message_constants.INFO: "alert-info",
+    message_constants.SUCCESS: "alert-success",
+    message_constants.WARNING: "alert-warning",
+    message_constants.ERROR: "alert-danger",
 }
 
 MIDDLEWARE = [
