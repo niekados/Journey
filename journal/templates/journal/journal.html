@@ -6,66 +6,76 @@ Journal
 
 {% block content %}
 <!-- Header -->
-<h1 class="text-center p-2 m-5">My Journal</h1>
+<h1 class="text-center m-5">My Journal</h1>
 
 
-<div class="container w-75 d-flex flex-wrap m-auto">
-        <!-- Search box -->
-        <div class="col-sm-12 col-md-7 d-flex m-auto justify-content-center">
-            <form class="d-flex w-100" role="search" method="GET" action="{% url 'journal' %}">
-                <input class="form-control me-2" name="journal_query" type="search" placeholder="Search" aria-label="Search">
-                <button class="my-button green-button bold-button" type="submit">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-            </form>
-        </div>
-
-        <!-- Add new journal entry button -->
-        <div class="col-sm-12 m-auto col-md-4 d-flex justify-content-center">
-            <a href="{% url 'add_journal_entry' %}" class="my-button green-button" title="Create new entry">
-                <i class="fa-solid fa-plus"></i> New entry</a>
-        </div>
+<div class="container container-width d-flex flex-wrap space-between m-auto mb-5">
+    <!-- Search box -->
+    <div class="col-sm-12 col-md-7 d-flex m-auto justify-content-start">
+        <form class="d-flex w-100" role="search" method="GET" action="{% url 'journal' %}">
+            <input class="form-control me-2" name="journal_query" type="search" placeholder="Search"
+                aria-label="Search">
+            <button class="my-button green-button bold-button" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
     </div>
+
+    <!-- Add new journal entry button -->
+    <div class="col-sm-12 m-auto col-md-4 d-flex justify-content-end">
+        <a href="{% url 'add_journal_entry' %}" class="my-button green-button" title="Create new entry">
+            <i class="fa-solid fa-plus"></i> New entry</a>
+    </div>
+</div>
 </div>
 <!-- Journal entry list -->
-<div class="container">
-    <div class="row d-flex justify-content-center">
-        {% for journal_entry in journal_entries_list %}
-        <div class="col-10 p-5">
-            <a href="{% url 'journal_detail' journal_entry.id %}" class="journal-card"
-                aria-label="click to view {{ journal_entry.day_description }}">
-                <div class="card">
-                    <div class="card-header red-header container">
-                        <div class="row">
-                            <div class="col-10">{{ journal_entry.created_on }}</div>
-                            <div class="col-2">
-                                {% if journal_entry.is_public %}
-                                <small>published</small>
-                                {% endif %}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h2 class="card-title">{{ journal_entry.day_description }}</h2>
-                        <h3>
-                            {% if journal_entry.mood == 'happy' %}
-                            <i class="fa-regular fa-face-smile-beam"></i>
-                            {% elif journal_entry.mood == 'normal' %}
-                            <i class="fa-regular fa-face-meh"></i>
-                            {% else %}
-                            <i class="fa-regular fa-face-frown-open"></i>
-                            {% endif %}
-                        </h3>
-                        <p class="card-text mb-3">{{ journal_entry.content }}</p>
-                        <a href="{% url 'edit_journal_entry' journal_entry.id %}" class="my-button green-button"><i
-                                class="fa-regular fa-pen-to-square"></i> Edit</a>
-                        <a href="{% url 'delete_journal_entry' journal_entry.id %}" class="my-button red-button"><i
-                                class="fa-regular fa-trash-can"></i> Delete</a>
-                    </div>
-                </div>
-            </a>
+
+
+{% for journal_entry in journal_entries_list %}
+
+
+    <div class="card journal-card position-relative container-width m-auto mb-5">
+        <div class="card-header red-header d-flex flex-row justify-content-between">
+            <p> <small>{{ journal_entry.created_on|date:"d M Y, g:i A" }} </small></p>
+            <p>
+                {% if journal_entry.is_public %}
+                <small>published</small>
+                {% endif %}
+            </p>
         </div>
-        {% endfor %}
+        <div class="card-body">
+
+            <h2>
+                <div class="d-flex flex-row justify-content-between mb-4">
+                    <span>
+                        {{ journal_entry.day_description }}
+                    </span>
+                    <span>
+                        {% if journal_entry.mood == 'happy' %}
+                        <i class="fa-regular fa-face-smile-beam"></i>
+                        {% elif journal_entry.mood == 'normal' %}
+                        <i class="fa-regular fa-face-meh"></i>
+                        {% else %}
+                        <i class="fa-regular fa-face-frown-open"></i>
+                        {% endif %}
+                    </span>
+                </div>
+            </h2>
+            <p class="card-text mb-3">{{ journal_entry.content }}</p>
+            <!-- <div class="text-center mb-2">
+                <a href="{% url 'edit_journal_entry' journal_entry.id %}" class="my-button green-button"><i
+                        class="fa-regular fa-pen-to-square"></i> Edit</a>
+                <a href="{% url 'delete_journal_entry' journal_entry.id %}" class="my-button red-button"><i
+                        class="fa-regular fa-trash-can"></i> Delete</a>
+                        
+            </div> -->
+            <a href="{% url 'journal_detail' journal_entry.id %}" class="stretched-link"
+            aria-label="click to view {{ journal_entry.day_description }}">Expand details...</a>
+        </div>
     </div>
-</div>
+
+
+{% endfor %}
+
+
 {% endblock %}

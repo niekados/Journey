@@ -83,6 +83,11 @@ a.nav-link {
     width: 100%;
 }
 
+/* container */
+.container-width {
+    width: 97%;
+}
+
 /* buttons */
 .my-button {
     display: inline-block;
@@ -136,6 +141,14 @@ a.nav-link {
 .journal-card {
     text-decoration: none;
     color: var(--moss-green);
+}
+
+.card h2,h3 {
+    font-size: 1.4rem;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-decoration-color: var(--moss-green);
+    text-underline-offset: 4px;
 }
 
 /* footer */

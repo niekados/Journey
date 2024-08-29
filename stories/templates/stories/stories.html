@@ -8,22 +8,22 @@ Stories
 <!-- Header -->
 <h1 class="text-center m-5">Community Stories</h1>
 
-<div class="container">
-    <div class="row d-flex justify-content-center">
+
+
         {% for story in stories_list %}
-        <div class="col-10 p-5">
-            <div class="card">
+
+            <div class="card container-width m-auto mb-5">
                 <div class="card-header green-header">
-                    <div>{{ story.published_on }}</div>
+                    <div>{{ story.published_on|date:"d M Y, g:i A" }}</div>
                 </div>
                 <div class="card-body">
                     <p>{{ story.content }}</p>
                 </div>
             </div>
-        </div>
+
         {% endfor %}
-    </div>
-</div>
+
+
 
 {% if is_paginated %}
 <nav aria-label="Page navigation">
