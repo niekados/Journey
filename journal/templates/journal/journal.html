@@ -8,6 +8,8 @@ Journal
 <!-- Header -->
 <h1 class="text-center m-5">My Journal</h1>
 
+<p class="text-center">Welcome back {{ user.username }}</p>
+
 <div class="container container-width d-flex flex-wrap space-between m-auto mb-5">
 
     <!-- Search box -->
@@ -45,21 +47,17 @@ Journal
         </div>
         <div class="card-body">
 
-            <h2>
-                <div class="d-flex flex-row justify-content-between mb-4">
-                    <span>
-                        {{ journal_entry.day_description }}
-                    </span>
-                    <span>
-                        {% if journal_entry.mood == 'happy' %}
-                        <i class="fa-regular fa-face-smile-beam"></i>
-                        {% elif journal_entry.mood == 'normal' %}
-                        <i class="fa-regular fa-face-meh"></i>
-                        {% else %}
-                        <i class="fa-regular fa-face-frown-open"></i>
-                        {% endif %}
-                    </span>
-                </div>
+            <h2 class="d-flex justify-content-between mb-4">
+                <span>{{ journal_entry.day_description }}</span>
+                <span>
+                    {% if journal_entry.mood == 'happy' %}
+                    <i class="fa-regular fa-face-smile-beam"></i>
+                    {% elif journal_entry.mood == 'normal' %}
+                    <i class="fa-regular fa-face-meh"></i>
+                    {% else %}
+                    <i class="fa-regular fa-face-frown-open"></i>
+                    {% endif %}
+                </span>
             </h2>
             <p class="card-text mb-3">{{ journal_entry.content }}</p>
             <!-- <div class="text-center mb-2">

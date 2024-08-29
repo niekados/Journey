@@ -100,12 +100,21 @@ def delete_journal_entry(request, pk):
                 )
             return redirect('journal')
     else:
-        # Render the confirmation template
-        return render(
-            request,
-            'journal/journal_entry_confirm_delete.html',
-            {'journal_entry': journal_entry}
-        )
+        # If method is GET, confirm that logged-in user is the entry owner
+        if journal_entry.user == request.user:
+            # Render the confirmation template
+            return render(
+                request,
+                'journal/journal_entry_confirm_delete.html',
+                {'journal_entry': journal_entry}
+            )
+        else:
+            # Add an error message if the user isn't entry owner
+            messages.error(
+                request,
+                "You are not authorized to delete this journal entry!"
+                )
+            return redirect('journal')
 
 
 @login_required
