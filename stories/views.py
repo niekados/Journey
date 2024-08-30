@@ -11,4 +11,4 @@ class Stories(ListView):
     queryset = StoryEntry.objects.filter(status=1).order_by('-published_on')
     template_name = "stories/stories.html"
     context_object_name = "stories_list"
-    paginate_by = 3
+    paginate_by = 8

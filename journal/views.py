@@ -16,6 +16,7 @@ class Journal(LoginRequiredMixin, ListView):
     template_name = "journal/journal.html"
     model = JournalEntry
     context_object_name = "journal_entries_list"
+    paginate_by = 8
 
     def get_queryset(self, **kwargs):
         """
