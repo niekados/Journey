@@ -63,13 +63,6 @@ Journal
                 </span>
             </h2>
             <p class="card-text mb-3">{{ journal_entry.content }}</p>
-            <!-- <div class="text-center mb-2">
-                <a href="{% url 'edit_journal_entry' journal_entry.id %}" class="my-button green-button"><i
-                        class="fa-regular fa-pen-to-square"></i> Edit</a>
-                <a href="{% url 'delete_journal_entry' journal_entry.id %}" class="my-button red-button"><i
-                        class="fa-regular fa-trash-can"></i> Delete</a>
-                        
-            </div> -->
             <a href="{% url 'journal_detail' journal_entry.id %}" class="stretched-link"
             aria-label="click to view {{ journal_entry.day_description }}">Expand details...</a>
         </div>
