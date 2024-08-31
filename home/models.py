@@ -9,9 +9,9 @@ class HomeContent(models.Model):
     Attributes:
         introduction (RichTextField): Introduction for the home page.
         instructions (RichTextField): Instructions to guide users on
-        how to use the Journey app.
-        created_on (DateTimeField): The timestamp of when the content was last
-            updated or created.
+                                       how to use the Journey app.
+        created_on (DateTimeField): The timestamp of when the content was
+                                     last updated or created.
     """
 
     introduction = RichTextField(null=False, blank=False)
