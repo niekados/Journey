@@ -8,32 +8,43 @@ Stories
 <!-- Header -->
 <h1 class="text-center m-5">Community Stories</h1>
 
-        {% for story in stories_list %}
-
-            <div class="card container-width m-auto mb-5">
-                <div class="card-header green-header">
-                    <div>{{ story.published_on|date:"d M Y, g:i A" }}</div>
-                </div>
-                <div class="card-body">
-                    <p>{{ story.content }}</p>
-                </div>
+{% if stories_list %}
+    {% for story in stories_list %}
+        <article class="card container-width m-auto mb-5">
+            <div class="card-header green-header">
+                <p>
+                    <small>{{ story.published_on|date:"d M Y, g:i A" }}</small>
+                </p>
             </div>
+            <div class="card-body">
+                <p>{{ story.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% else %}
+    <p class="text-center">No stories available at this time.</p>
+{% endif %}
 
-        {% endfor %}
-
-
-
+<!-- Page navigation -->
 {% if is_paginated %}
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center mb-5">
         {% if page_obj.has_previous %}
-        <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link"><i class="fa-solid fa-arrow-left"></i></a></li>
+        <li class="page-item">
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link" aria-label="Previous page">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </li>
         {% endif %}
         <li class="page-item">
             <span class="page-link page-text">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
         </li>
         {% if page_obj.has_next %}
-        <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link"><i class="fa-solid fa-arrow-right"></i></a></li>
+        <li class="page-item">
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link" aria-label="Next page">
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </li>
         {% endif %}
     </ul>
 </nav>
