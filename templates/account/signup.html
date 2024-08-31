@@ -8,7 +8,9 @@
 
 <h1 class="text-center m-5">{% trans "Sign Up" %}</h1>
 <div class="container form-width">
-  <p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+  <p class="text-center">
+    {% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+  </p>
   <form class="form p-2" id="signup_form" method="post" action="{% url 'account_signup' %}">
     {% csrf_token %}
     {{ form|crispy }}
@@ -16,8 +18,10 @@
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
     <div class="text-center mb-3">
-    <button class="my-button green-button" type="submit"><i class="fa-solid fa-user-plus"></i> Sign Up</button>
-  </div>
+      <button class="my-button green-button" type="submit" aria-label="Create a new account">
+        <i class="fa-solid fa-user-plus"></i> Sign Up
+      </button>
+    </div>
   </form>
 </div>
 {% endblock content %}

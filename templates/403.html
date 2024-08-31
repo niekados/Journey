@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
-{% block title %}Delete Journal Entry{% endblock %}
+{% block title %}403 - Unauthorized Access{% endblock %} 
 
 {% block content %}
 
 <div class="container text-center m-5">
     <h1 class="mb-4">403 - Unauthorized Access</h1>
-    <p class="lead">You do not have permission to view this journal entry.</p>
-    <a href="{% url 'home' %}" class="my-button green-button mt-3">Return to Home</a>
+    <h2 class="lead">You do not have permission to view this journal entry.</h2> 
+    <a href="{% url 'home' %}" class="my-button green-button mt-3" aria-label="Return to the home page">Return to Home</a> 
 </div>
 
 {% endblock %}
