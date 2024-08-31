@@ -172,4 +172,4 @@ The Surface design of the Journey website creates a warm, natural, and welcoming
 
 ## Database Schema
 
-<img src="documentation/wireframes/erd.png" alt="Colours" style="width:80%;">
+<img src="documentation/wireframes/erd.png">

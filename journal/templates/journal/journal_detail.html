@@ -28,11 +28,11 @@ Journal Entry
                 </span>
                 <span>
                     {% if journal_entry_detail.mood == 'happy' %}
-                    <i class="fa-regular fa-face-smile-beam"></i>
+                    <i class="fa-regular fa-face-smile-beam" aria-label="Happy mood"></i> 
                     {% elif journal_entry_detail.mood == 'normal' %}
-                    <i class="fa-regular fa-face-meh"></i>
+                    <i class="fa-regular fa-face-meh" aria-label="Normal mood"></i>
                     {% else %}
-                    <i class="fa-regular fa-face-frown-open"></i>
+                    <i class="fa-regular fa-face-frown-open" aria-label="Sad mood"></i>
                     {% endif %}
                 </span>
             </div>
