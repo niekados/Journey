@@ -23,7 +23,7 @@ class Journal(LoginRequiredMixin, ListView):
         Filter the queryset to include the logged-in user's journal entries
         and provide search functionality.
         """
-        query = self.request.GET.get('journal_query')
+        query = self.request.GET.get("journal_query")
 
         # Filter the user's own entries
         queryset = JournalEntry.objects.filter(user=self.request.user)
@@ -31,14 +31,14 @@ class Journal(LoginRequiredMixin, ListView):
         # Apply search filters if a search query is provided
         if query:
             queryset = queryset.filter(
-                Q(day_description__icontains=query) |
-                Q(content__icontains=query) |
-                Q(grateful_for__icontains=query) |
-                Q(improve_on__icontains=query)
+                Q(day_description__icontains=query)
+                | Q(content__icontains=query)
+                | Q(grateful_for__icontains=query)
+                | Q(improve_on__icontains=query)
             )
 
         # Order the results by creation date, most recent first
-        return queryset.order_by('-created_on')
+        return queryset.order_by("-created_on")
 
 
 class AddJournalEntry(LoginRequiredMixin, CreateView):
@@ -70,11 +70,13 @@ class JournalDetail(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     """
     View for displaying detailed journal entry.
     """
+
     template_name = "journal/journal_detail.html"
     model = JournalEntry
     context_object_name = "journal_entry_detail"
 
     def test_func(self):
+        # Ensure that only the owner can view their journal entry
         return self.request.user == self.get_object().user
 
 
@@ -92,30 +94,29 @@ def delete_journal_entry(request, pk):
             # Delete the journal entry
             journal_entry.delete()
             messages.success(request, "Journal entry deleted!")
-            return redirect('journal')
+            return redirect("journal")
         else:
             # Add an error message if the user doesn't have permission
             messages.error(
                 request,
                 "You are not authorized to delete this journal entry!"
-                )
-            return redirect('journal')
+            )
+            return redirect("journal")
     else:
-        # If method is GET, confirm that logged-in user is the entry owner
+        # If method is GET, confirm that the logged-in user is the entry owner
         if journal_entry.user == request.user:
             # Render the confirmation template
             return render(
                 request,
-                'journal/journal_entry_confirm_delete.html',
-                {'journal_entry': journal_entry}
+                "journal/journal_entry_confirm_delete.html",
+                {"journal_entry": journal_entry},
             )
         else:
             # Add an error message if the user isn't entry owner
             messages.error(
-                request,
-                "You are not authorized to delete this journal entry!"
-                )
-            return redirect('journal')
+                request, "You are not authorized to delete this journal entry!"
+            )
+            return redirect("journal")
 
 
 @login_required
@@ -131,8 +132,8 @@ def edit_journal_entry(request, pk):
         messages.error(
             request,
             "You are not authorized to edit this journal entry."
-        )
-        return redirect('journal')
+            )
+        return redirect("journal")
 
     # Process the form data if the request method is POST
     if request.method == "POST":
@@ -141,6 +142,7 @@ def edit_journal_entry(request, pk):
         if form.is_valid():
             # Save the updated journal entry
             form.save()
+            messages.success(request, "Journal entry updated!")
 
             # Publish or unpublish the entry based on its current status
             if journal_entry.is_public:
@@ -148,8 +150,7 @@ def edit_journal_entry(request, pk):
             else:
                 journal_entry.unpublish_story()
 
-            messages.success(request, "Journal entry updated!")
-            return redirect('journal')
+            return redirect("journal")
         else:
             messages.error(
                 request,

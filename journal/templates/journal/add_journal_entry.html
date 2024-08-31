@@ -11,9 +11,12 @@ Add Journal Entry
         {% csrf_token %}
         {{ form|crispy }}
         <div class="text-center mb-5">
-            <a href="{% url 'journal' %}" class="my-button red-button mt-2"><i class="fa-solid fa-xmark"></i> Cancel</a>
-            <button type="submit" class="my-button green-button mt-2"><i class="fa-regular fa-floppy-disk"></i>
-                Save</button>
+            <a href="{% url 'journal' %}" class="my-button red-button mt-2" aria-label="Cancel adding journal entry">
+                <i class="fa-solid fa-xmark"></i> Cancel
+            </a>
+            <button type="submit" class="my-button green-button mt-2" aria-label="Save journal entry">
+                <i class="fa-regular fa-floppy-disk"></i> Save
+            </button>
         </div>
     </form>
 </div>

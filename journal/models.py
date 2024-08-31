@@ -10,7 +10,7 @@ class JournalEntry(models.Model):
 
     Attributes:
         user (ForeignKey): The user who created the journal entry.
-        mood (IntegerField): Users mood.
+        mood (CharField): User's mood from the predefined choices.
         day_description (CharField): A brief description of the day.
         content (TextField): The main content of the journal entry.
         grateful_for (TextField): Reflect on what the user is grateful for.
@@ -26,15 +26,13 @@ class JournalEntry(models.Model):
     ]
 
     user = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name="journal_author"
+        User, on_delete=models.CASCADE, related_name="journal_author"
     )
     mood = models.CharField(
         max_length=10,
         choices=MOOD_CHOICES,
         default="normal"
-    )
+        )
     day_description = models.CharField(max_length=255, blank=False, null=False)
     content = models.TextField()
     grateful_for = models.TextField(blank=True)
@@ -51,10 +49,10 @@ class JournalEntry(models.Model):
     def publish_as_story(self):
         """Publish the journal entry as a story if it is marked public."""
         if self.is_public:
-            StoryEntry = apps.get_model('stories', 'StoryEntry')
+            StoryEntry = apps.get_model("stories", "StoryEntry")
             story_entry, created = StoryEntry.objects.get_or_create(
                 journal_entry=self,
-                defaults={'content': self.content},
+                defaults={"content": self.content},
             )
             if not created and story_entry.content != self.content:
                 # Update the content if it has changed
@@ -64,6 +62,5 @@ class JournalEntry(models.Model):
     def unpublish_story(self):
         """Unpublish the journal entry from the community stories."""
         if not self.is_public:
-            StoryEntry = apps.get_model('stories', 'StoryEntry')
+            StoryEntry = apps.get_model("stories", "StoryEntry")
             StoryEntry.objects.filter(journal_entry=self).delete()
-            self.save()

@@ -6,14 +6,13 @@ Journal Entry
 
 {% block content %}
 
-
 <h1 class="text-center m-5">
     {{ journal_entry_detail.created_on|date:"l, d F" }}
 </h1>
 
 <div class="card container-width m-auto mb-5">
     <div class="card-header red-header d-flex flex-row justify-content-between">
-        <p> <small>{{ journal_entry_detail.created_on|time:"g:i A" }} </small></p>
+        <p><small>{{ journal_entry_detail.created_on|time:"g:i A" }}</small></p>
         <p>
             {% if journal_entry_detail.is_public %}
             <small>published</small>
@@ -28,13 +27,14 @@ Journal Entry
                 </span>
                 <span>
                     {% if journal_entry_detail.mood == 'happy' %}
-                    <i class="fa-regular fa-face-smile-beam" aria-label="Happy mood"></i> 
+                    <i class="fa-regular fa-face-smile-beam" aria-label="Happy mood"></i>
                     {% elif journal_entry_detail.mood == 'normal' %}
                     <i class="fa-regular fa-face-meh" aria-label="Normal mood"></i>
                     {% else %}
                     <i class="fa-regular fa-face-frown-open" aria-label="Sad mood"></i>
                     {% endif %}
                 </span>
+                
             </div>
         </h2>
         <p>{{ journal_entry_detail.content }}</p>
@@ -49,14 +49,16 @@ Journal Entry
         <p>{{ journal_entry_detail.improve_on }}</p>
         {% endif %}
 
-
-
         <div class="text-center mb-2">
             {% if journal_entry_detail.user == request.user %}
-            <a href="{% url 'edit_journal_entry' journal_entry_detail.id %}" class="my-button green-button"><i
-                    class="fa-regular fa-pen-to-square"></i> Edit</a>
-            <a href="{% url 'delete_journal_entry' journal_entry_detail.id %}" class="my-button red-button"><i
-                    class="fa-regular fa-trash-can"></i> Delete</a>
+            <a href="{% url 'edit_journal_entry' journal_entry_detail.id %}"
+               class="my-button green-button" aria-label="Edit journal entry">
+               <i class="fa-regular fa-pen-to-square"></i> Edit
+            </a>
+            <a href="{% url 'delete_journal_entry' journal_entry_detail.id %}"
+               class="my-button red-button" aria-label="Delete journal entry">
+               <i class="fa-regular fa-trash-can"></i> Delete
+            </a>
             {% endif %}
         </div>
     </div>

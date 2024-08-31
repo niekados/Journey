@@ -9,8 +9,8 @@ Journal
 <h1 class="text-center m-5">My Journal</h1>
 
 <div class="container text-center my-5">
-    <h2 class="h4">Welcome, {{ user.username }}!</h2>
-    <p class="text-muted">It's time to write.</p>
+    <h2 class="h4">Hello, {{ user.username }}!</h2>
+    <p class="text-muted">What story will you share today?</p>
 </div>
 
 <div class="container container-width d-flex flex-wrap space-between m-auto mb-5">
@@ -18,9 +18,10 @@ Journal
     <!-- Search box -->
     <div class="col-12 col-md-7 d-flex m-auto justify-content-center justify-content-md-start">
         <form class="d-flex w-100" role="search" method="GET" action="{% url 'journal' %}">
-            <input class="form-control me-2" name="journal_query" type="search" placeholder="Search"
-                aria-label="Search">
-            <button class="my-button green-button bold-button" type="submit">
+            <input class="form-control me-2" name="journal_query" type="search" 
+                   placeholder="Search" aria-label="Search journal entries">
+            <button class="my-button green-button bold-button" type="submit" 
+                    aria-label="Search entries">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </form>
@@ -28,20 +29,18 @@ Journal
 
     <!-- Add new journal entry button -->
     <div class="col-12 col-md-5 m-auto d-flex d-column justify-content-center justify-content-md-end">
-        <a href="{% url 'add_journal_entry' %}" class="my-button green-button mt-4 mt-md-0" title="Create new entry">
-            <i class="fa-solid fa-plus"></i> New entry</a>
+        <a href="{% url 'add_journal_entry' %}" class="my-button green-button mt-4 mt-md-0" 
+           title="Create new entry" aria-label="Create a new journal entry">
+            <i class="fa-solid fa-plus"></i> New entry
+        </a>
     </div>
 </div>
-</div>
+
 <!-- Journal entry list -->
-
-
 {% for journal_entry in journal_entries_list %}
-
-
     <div class="card journal-card position-relative container-width m-auto mb-5">
         <div class="card-header red-header d-flex flex-row justify-content-between">
-            <p> <small>{{ journal_entry.created_on|date:"d M Y, g:i A" }} </small></p>
+            <p><small>{{ journal_entry.created_on|date:"d M Y, g:i A" }}</small></p>
             <p>
                 {% if journal_entry.is_public %}
                 <small>published</small>
@@ -49,43 +48,52 @@ Journal
             </p>
         </div>
         <div class="card-body">
-
             <h2 class="d-flex justify-content-between mb-4">
                 <span>{{ journal_entry.day_description }}</span>
                 <span>
                     {% if journal_entry.mood == 'happy' %}
-                    <i class="fa-regular fa-face-smile-beam"></i>
+                    <i class="fa-regular fa-face-smile-beam" aria-label="Happy mood"></i>
                     {% elif journal_entry.mood == 'normal' %}
-                    <i class="fa-regular fa-face-meh"></i>
+                    <i class="fa-regular fa-face-meh" aria-label="Normal mood"></i>
                     {% else %}
-                    <i class="fa-regular fa-face-frown-open"></i>
+                    <i class="fa-regular fa-face-frown-open" aria-label="Sad mood"></i>
                     {% endif %}
                 </span>
             </h2>
             <p class="card-text mb-3">{{ journal_entry.content }}</p>
             <a href="{% url 'journal_detail' journal_entry.id %}" class="stretched-link"
-            aria-label="click to view {{ journal_entry.day_description }}">Expand details...</a>
+               aria-label="Click to view details of {{ journal_entry.day_description }}">
+               Expand details...
+            </a>
         </div>
     </div>
-
-
 {% endfor %}
 
 {% if is_paginated %}
 <nav aria-label="Page navigation">
     <ul class="pagination justify-content-center mb-5">
         {% if page_obj.has_previous %}
-        <li class="page-item"><a href="?page={{ page_obj.previous_page_number }}" class="page-link"><i class="fa-solid fa-arrow-left"></i></a></li>
+        <li class="page-item">
+            <a href="?page={{ page_obj.previous_page_number }}" class="page-link" 
+               aria-label="Previous page">
+               <i class="fa-solid fa-arrow-left"></i>
+            </a>
+        </li>
         {% endif %}
         <li class="page-item">
-            <span class="page-link page-text">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+            <span class="page-link page-text">Page {{ page_obj.number }} of 
+            {{ page_obj.paginator.num_pages }}</span>
         </li>
         {% if page_obj.has_next %}
-        <li class="page-item"><a href="?page={{ page_obj.next_page_number }}" class="page-link"><i class="fa-solid fa-arrow-right"></i></a></li>
+        <li class="page-item">
+            <a href="?page={{ page_obj.next_page_number }}" class="page-link" 
+               aria-label="Next page">
+               <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </li>
         {% endif %}
     </ul>
 </nav>
 {% endif %}
-
 
 {% endblock %}

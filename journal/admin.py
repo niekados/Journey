@@ -1,6 +1,3 @@
-from django.contrib import admin
-
-# Register your models here.
-
-# Due to privacy JournalEntry model is not registered.
-# Admin should not have access to private journal entries.
+# Due to privacy concerns, the JournalEntry model is not registered in the
+# admin site. This ensures that admin users do not have access to the
+# personal diary entries of users, as these contain sensitive information.

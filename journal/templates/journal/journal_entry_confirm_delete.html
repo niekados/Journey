@@ -5,19 +5,18 @@ Delete Journal Entry
 {% endblock %}
 
 {% block content %}
-
-
-    <h1 class="text-center m-5">Confirm delete</h1>
-    <div>
-        <form method="POST" class="text-center">
-            {% csrf_token %}
-            <p>Are you sure you want to delete entry created on {{ journal_entry.created_on|date:"d M Y, g:i A"  }}</p>
-            <a href="{% url 'journal' %}" class="my-button red-button"><i class="fa-solid fa-xmark"></i> Cancel</a>
-            <button type="submit" class="my-button green-button">
-                <i class="fa-solid fa-check"></i> Confirm
-            </button>
-        </form>
-        
-    </div>
-
+<h1 class="text-center m-5">Confirm delete</h1>
+<div class="text-center">
+    <form method="POST" class="text-center">
+        {% csrf_token %}
+        <p>Are you sure you want to delete entry created on 
+            {{ journal_entry.created_on|date:"d M Y, g:i A" }}?</p>
+        <a href="{% url 'journal' %}" class="my-button red-button" aria-label="Cancel delete entry">
+            <i class="fa-solid fa-xmark"></i> Cancel
+        </a>
+        <button type="submit" class="my-button green-button" aria-label="Confirm deletion of journal entry">
+            <i class="fa-solid fa-check"></i> Confirm
+        </button>
+    </form>
+</div>
 {% endblock %}
