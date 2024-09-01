@@ -158,9 +158,9 @@ The Surface design of the Journey website creates a warm, natural, and welcoming
 
 <img src="documentation/wireframes/colors.png" alt="Colours" style="width:50%;">
 
-- **#FFC9B9** - This soft, warm color represents the sun setting at the end of a day, evoking a sense of calm and reflection. It’s used to create a soothing backdrop, symbolizing the peaceful moments when users sit down to journal.
-- **#0E3B02** - A deep green shade, reminding of forest treetops and the rich greenness of moss. This color adds depth and a connection to nature, grounding the user experience in a sense of tranquility and growth.
-- **#B7D799** - A lighter green used for accents. This color highlights elements and draws attention in a way that feels fresh, complementing the deeper green tones.
+- **#FFC9B9** - This soft, warm colour represents the sun setting at the end of a day, evoking a sense of calm and reflection. It’s used to create a soothing backdrop, symbolizing the peaceful moments when users sit down to journal.
+- **#0E3B02** - A deep green shade, reminding of forest treetops and the rich greenness of moss. This color adds depth and a connection to nature, grounding the user experience in a sense of tranquility and growth. It has a contrast ratio of 12.76 with white (#FFFFFF), 8.70 with #FFC9B9, and 8.02 with #B7D799.
+- **#B7D799** - A lighter green is used for accents. This colour highlights elements and draws attention in a way that feels fresh, complementing the deeper green tones.
 
 ### Typography
 
@@ -192,6 +192,25 @@ The Surface design of the Journey website creates a warm, natural, and welcoming
 
 <img src="documentation/wireframes/erd.png">
 
+## Agile
+
+The Journey project follows Agile methodology to enhance planning and management throughout the development process. It began with brainstorming and the creation of Epics, which were later broken down into user stories.
+
+These user stories were then used on the project board within GitHub Projects, which was maintained with three columns:
+- **To Do**: For user stories that need to be started.
+- **In Progress**: For user stories that are currently being worked on.
+- **Done**: For user stories that have been completed.
+
+Each user story included acceptance criteria to define what must be completed for the story to be considered done. User stories were added to the project board through the GitHub Issues section, allowing for easy tracking and updates. The project board can be viewed [here](https://github.com/users/niekados/projects/5).
+
+Additionally, the MoSCoW prioritization method was employed, which helped categorize user stories into four groups:
+- **Must have**: Critical features for the app's success.
+- **Should have**: Important features that add significant value but are not critical.
+- **Could have**: Nice-to-have features that can enhance the user experience if time allows.
+- **Won't have**: Features that are not a priority for this project cycle but may be revisited in the future.
+
+This approach enabled better organization, focus, and responsiveness to changing requirements during the development of Journey.
+
 ## Technologies Used
 
 Journey utilizes a range of technologies and libraries to create a seamless user experience. Here’s a list of the key technologies used:
@@ -207,6 +226,8 @@ Journey utilizes a range of technologies and libraries to create a seamless user
 - **Python**: The programming language used for backend development in Journey. [Learn more](https://www.python.org)
 
 - **Django 4.2.15**: A Python web framework that simplifies web application development. [Learn more](https://www.djangoproject.com)
+
+- **PostgreSQL from Code Institute**: An open-source relational database system used to store app data and user entries, with storage provided by [Code Institute](https://dbs.ci-dbs.net/). [Learn more](https://www.postgresql.org)
 
 - **GitHub**: A platform for version control and code storage. [Learn more](https://github.com)
 
