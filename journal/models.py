@@ -33,7 +33,7 @@ class JournalEntry(models.Model):
         choices=MOOD_CHOICES,
         default="normal"
         )
-    day_description = models.CharField(max_length=255, blank=False, null=False)
+    day_description = models.CharField(max_length=65, blank=False, null=False)
     content = models.TextField()
     grateful_for = models.TextField(blank=True)
     improve_on = models.TextField(blank=True)

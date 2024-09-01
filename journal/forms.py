@@ -18,10 +18,10 @@ class JournalEntryForm(forms.ModelForm):
             "is_public",
         ]
         labels = {
-            "mood": "How do you feel today?",
-            "day_description": "Describe your day in one sentence",
-            "content": "Journal entry",
-            "grateful_for": "What are you grateful for today?",
-            "improve_on": "What should you improve on?",
-            "is_public": "Share your entry with the community?",
+            "mood": "How do I feel today?",
+            "day_description": "Sum up my day in 5 words.",
+            "content": "My day's story",
+            "grateful_for": "What am I thankful for today?",
+            "improve_on": "How can I be better tomorrow?",
+            "is_public": "Share this entry with the community?",
         }
