@@ -22,4 +22,5 @@ class HomeContent(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"Home content updated on {self.created_on}"
+        formatted_date = self.created_on.strftime("%-d %b %Y, %-I:%M%p")
+        return f"Home content updated on: {formatted_date}"

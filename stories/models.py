@@ -32,4 +32,5 @@ class StoryEntry(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     def __str__(self):
-        return f"Story: {self.content[:20]}. Published on {self.published_on}"
+        formatted_date = self.published_on.strftime("%-d %b %Y, %-I:%M%p")
+        return f"Story: {self.content[:20]}. Published on: {formatted_date}"

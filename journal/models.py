@@ -44,7 +44,8 @@ class JournalEntry(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f"{self.day_description} by {self.user.username}"
+        formatted_date = self.created_on.strftime("%-d %b %Y, %-I:%M%p")
+        return f"{self.day_description}. Created on: {formatted_date}"
 
     def publish_as_story(self):
         """Publish the journal entry as a story if it is marked public."""
