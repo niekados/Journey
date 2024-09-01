@@ -2,7 +2,7 @@
 
 "Journey" is a journalling app with a twist. This application, built using the Django framework, allows users to journal their moods, daily events and their progress. Embark on a journaling journey where you can reflect on your experiences and personal growth whether you want to record your thoughts or track your mood and achievements. This app features a unique function where users can anonymously let go of their worries or share their happy moments by publishing their diary entries (stories).
 
-**[Link to the deployed application](#)**
+**[Link to the deployed application](https://journey-journaling-app-57914ad778ff.herokuapp.com/)**
 
 ## Index
 
@@ -16,6 +16,7 @@
 - [Surface](#surface)
     - [Fonts](#fonts)
     - [Colours](#colours)
+- [Security](#security)
 - [Features](#features)
     - [Feature1](#feature-1)
     - [Feature2](#feature-2)
@@ -24,11 +25,8 @@
 - [Database Schema](#database-schema)
   -[Entity Relationship Diagram](#entity-relationship-diagram)
 - [Agile](#agile)
-  - [MoSCoW](#moscow)
-- [Setting Up the Development Environment](#setting-up-the-development-environment)
 - [Deploying Project to Heroku](#deploying-project-to-heroku)
 - [Technologies Used](#technologies-used)
-- [Libraries & Frameworks](#libraries-&-frameworks)
 - [Credits](#credits)
 - [Testing](#testing)
 
@@ -170,6 +168,66 @@ The Surface design of the Journey website creates a warm, natural, and welcoming
 - **[Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono)** - This typewriter style font is used for headers, complimenting the journaling theme. While maintaining a clear and readable style, Cutive Mono adds a nostalgic touch that reminds users of old-school typewritten books.
 - **[Work Sans](https://fonts.google.com/specimen/Work+Sans)** - As the general-purpose font for body text, Work Sans offers a clean and modern reading experience. Its slightly rounded edges and simple style make it easy on the eyes, while still carrying a subtle hint of the typewriter influence from Cutive Mono, ensuring a smooth visual transition.
 
+## Future Features
+
+1. **User Profile Customization**:
+   - Allow users to add personal information and upload profile pictures.
+
+2. **Tags for Journal Entries**:
+   - Implement a tagging system so users can categorise their journal entries, making it easier to find specific entries later.
+
+3. **Reminders**:
+   - Implement a feature for users to set daily or weekly reminders to encourage them to write in their journal regularly.
+
+4. **Customizable Entry Templates**:
+   - Create a few templates for users to choose from when starting a new journal entry (e.g., "Daily Reflection," "Gratitude List").
+
+5. **Simple Analytics Dashboard**:
+   - Provide users with a dashboard displaying insights like the number of entries written over time or the most common moods tagged.
+
+6. **User Feedback System**:
+    - Create a simple feedback form for users to share their thoughts on the app and suggest new features.
+
 ## Database Schema
 
 <img src="documentation/wireframes/erd.png">
+
+## Technologies Used
+
+Journey utilizes a range of technologies and libraries to create a seamless user experience. Here’s a list of the key technologies used:
+
+- **HTML**: The markup language for creating web pages. [Learn more](https://developer.mozilla.org/en-US/docs/Web/HTML)
+
+- **CSS**: A stylesheet language that styles the HTML content. [Learn more](https://developer.mozilla.org/en-US/docs/Web/CSS)
+
+- **Bootstrap 5**: A framework that provides responsive design components and utilities. [Learn more](https://getbootstrap.com)
+
+- **FontAwesome**: An icon toolkit that provides scalable vector icons for the application. [Learn more](https://fontawesome.com)
+
+- **Python**: The programming language used for backend development in Journey. [Learn more](https://www.python.org)
+
+- **Django 4.2.15**: A Python web framework that simplifies web application development. [Learn more](https://www.djangoproject.com)
+
+- **GitHub**: A platform for version control and code storage. [Learn more](https://github.com)
+
+- **Gitpod**: Cloud based IDE. [Learn more](https://www.gitpod.io)
+
+- **Google Fonts**: A collection of fonts that enhance typography in the app. [Learn more](https://fonts.google.com)
+
+- **Balsamiq**: A wireframing tool. [Learn more](https://balsamiq.com)
+
+- **Lucidchart**: A diagramming application used to create ERDs. [Learn more](https://www.lucidchart.com)
+
+- **Crispy-Bootstrap5**: A Django app for easily using Bootstrap styles with forms (v2024.2). [Learn more](https://django-crispy-forms.readthedocs.io/en/latest/)
+
+- **Django Allauth**: A library for handling user registration and authentication (v0.57.2). [Learn more](https://docs.allauth.org/en/latest/index.html)
+
+- **Django RichTextField**: A library that allows for rich text editing in Django forms (v1.6.2), used with the free public version of CKEditor (v4.22.1). Note: This version is under an open-source license but does not receive security updates [Learn more](https://pypi.org/project/django-richtextfield/)
+
+- **Django Crispy Forms**: A library that enhances Django forms for better styling (v2.3). [Learn more](https://django-crispy-forms.readthedocs.io/en/latest/)
+
+- **Favicon Generator**: A tool to create favicons from FontAwesome icons. [Favicon Generator](https://gauger.io/fonticon/)
+
+- **Colour Contrast Checker**: A tool to check color contrast for accessibility. [Learn more](https://colourcontrast.cc)
+
+
