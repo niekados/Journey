@@ -20,8 +20,7 @@ Journal Entry
         </p>
     </div>
     <div class="card-body">
-        <h2>
-            <div class="d-flex flex-row justify-content-between mb-4">
+            <h2 class="d-flex flex-row justify-content-between mb-4">
                 <span>
                     {{ journal_entry_detail.day_description }}
                 </span>
@@ -34,9 +33,7 @@ Journal Entry
                     <i class="fa-regular fa-face-frown-open" aria-label="Sad mood"></i>
                     {% endif %}
                 </span>
-                
-            </div>
-        </h2>
+            </h2>
         <p>{{ journal_entry_detail.content }}</p>
 
         {% if journal_entry_detail.grateful_for %}
