@@ -320,4 +320,11 @@ Journey utilizes a range of technologies and libraries to create a seamless user
 
 - **Colour Contrast Checker**: A tool to check color contrast for accessibility. [Learn more](https://colourcontrast.cc)
 
+## Credits
+
+I found great support in YouTube video tutorials that helped me understand the Django framework better. A special thanks to Dee Mc, whose practical ideas and techniques I used helped simplify and improve my project. You can check out her channel [here](https://www.youtube.com/@IonaFrisbee) and her [Django tutorial playlist](https://youtube.com/playlist?list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&si=DTszaZAZIBO-PUrp).
+
+I want to thank [Code Institute](https://www.codeinstitute.net) for the learning materials provided, where I am a student. Their organised structure, development tools, and clear instructions have been essential for this project.
+
+These resources made a significant difference in my learning, and I'm grateful for the guidance they provided.
 
