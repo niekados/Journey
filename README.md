@@ -191,22 +191,37 @@ Journey features are designed to facilitate personal reflections while ensuring 
 
 ### Navigation Bar
 - **Unregistered Users**: The navigation bar displays links to the Home page and Stories page, along with options to register or sign in if the user is not logged in.
+   - <img src="documentation/features/navbar-log-out.png" alt="Sign out navbar" style="width:70%;">
 - **Logged-in Users**: When users are logged in, they have access to the Home page, Stories page, and Journal page. The navigation bar will then display a logout link.
+   - <img src="documentation/features/navbar-log-in.png" alt="Sign in navbar" style="width:70%;">
 
 ### Home Page
 - **Access for Unregistered Users**: The Home page is accessible to everyone, allowing unregistered users to explore the app.
 - **Sections**:
   - **Introduction**: Describes the idea behind Journey, encouraging personal reflection and growth through journaling.
   - **Instructions**: Provides guidance on how to use the app.
+  - <img src="documentation/features/home.png" alt="Home page" style="width:70%;">
 
 ### Stories Page
 - **Community Stories**: This page displays journal entries that users have chosen to publish publicly. It is accessible to both registered and unregistered users. Each story is stripped of any identifying user information, showcasing only the content and the date it was published.
+   - <img src="documentation/features/stories.png" alt="Stories page" style="width:70%;">
 
 ### Journal Page (Logged-in Users Only)
 - **User Privacy**: Each user’s journal entries are private and only accessible by the logged-in user. Admins do not have access to view or manipulate user journal entries.
 - **Search Functionality**: A search box allows users to easily find specific journal entries by keywords.
 - **Add Entry Button**: Users can create new journal entries using the "New Entry" button.
 - **List of Journal Entries**: Displays user entries in a single column for easy scrolling. Each entry is clickable, leading to a detailed view.
+- **Published tag**: If the user has published his entry, a "published" tag is added to the journal entry header.
+   - <img src="documentation/features/journal.png" alt="Journal page" style="width:70%;">
+
+### Detail View for Journal Entry
+The detail view for each journal entry displays:
+   - A short description of the day,
+   - The main story of the day,
+   - What the user is thankful for,
+   - What the user wishes to do better.
+- **Edit and delete buttons**: allowing users to manage their content easily.
+   - <img src="documentation/features/journal-detail.png" alt="Journal detail" style="width:70%;">
 
 ### Add Journal Entry Page
 - **Entry Form**:
@@ -216,26 +231,37 @@ Journey features are designed to facilitate personal reflections while ensuring 
   - **What am I thankful for today?**: Users can list things they are grateful for.
   - **How can I be better tomorrow?**: A section for users to express what they would like to do better tomorrow.
   - **Share this entry with the community?**: An option to tick if the user wants to share their entry in the community stories.
+   - <img src="documentation/features/journal-add.png" alt="Add journal entry" style="width:70%;">
 
 ### Edit Journal Entry Page
 - The layout is the same as the New Entry form, allowing users to modify their existing journal entries.
+   - <img src="documentation/features/journal-edit.png" alt="Edit journal entry" style="width:70%;">
 
 ### Delete Journal Entry Confirmation
 - When users click the delete button, a confirmation page appears, requiring them to confirm their choice to delete the entry.
+   - <img src="documentation/features/journal-confirm-delete.png" alt="Confirm delete entry" style="width:70%;">
 
 ### Django Admin Panel
 - The Django admin panel allows for management of the app's content but restricts access to journal entries. Admins can:
+      - <img src="documentation/features/admin.png" alt="Admin panel" style="width:70%;">
   - **Manage Home Content**: Update the instructions and change the introduction displayed on the Home page to ensure information is relevant.
+      - <img src="documentation/features/admin-home.png" alt="Admin home content" style="width:70%;">
   - **Approve Stories**: Review story entries for publication in the community stories. Admins can see only the journal content field of each entry, without access to other fields or user information. This ensures privacy and security, maintaining the core highlight of the app.
+      - <img src="documentation/features/admin-stories.png" alt="Admin stories" style="width:70%;">
 
 ### Authorization Pages
 - **403 Page**: This page informs users when they attempt to access restricted content, with a button to return to the home page.
-- **Sign-out Confirmation Page**: A page that confirms the user’s choice to log out of the application.
+   - <img src="documentation/features/403.png" alt="403 page" style="width:70%;">
 - **Registration Page**: A page where new users can sign up for an account.
+   - <img src="documentation/features/sign-up.png" alt="Sign up" style="width:70%;">
 - **Sign-in Page**: A page where existing users can log into their accounts.
+   - <img src="documentation/features/sign-in.png" alt="Sign in" style="width:70%;">
+- **Sign-out Confirmation Page**: A page that confirms the user’s choice to log out of the application.
+   - <img src="documentation/features/sign-out.png" alt="Sign out" style="width:70%;">
 
 ### Footer
 - **Social Links**: The footer includes links to the developer's social media profiles: GitHub, Twitter, and LinkedIn.
+   - <img src="documentation/features/footer.png" alt="Footer" style="width:70%;">
 
 ## Future Features
 
