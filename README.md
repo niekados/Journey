@@ -42,44 +42,46 @@ Journey is for the lonely, shy, scared, silent, brave, radiant, energetic, and l
 ### Epic 1: User Authentication
 As a user, I want to create an account and log in, so that I can have a private journaling experience.
 
-- **As a user**, I want to register for an account, so that I can start using the personal journal.
-- **As a user**, I want to log in to my account, so that I can access my private journal entries.
-- **As a user**, I want to log out of my account, so that I can ensure my journal entries are secure when I'm finished.
+- **As a user**, I want to register for an account, so that I can start using the personal journal. **(Must Have)**
+- **As a user**, I want to log in to my account, so that I can access my private journal entries. **(Must Have)**
+- **As a user**, I want to log out of my account, so that I can ensure my journal entries are secure when I'm finished. **(Must Have)**
 
 ### Epic 2: Homepage Experience
 As a user, I want to understand the purpose of Journey.
 
-- **As a user**, I want to read the website introduction on the homepage, so I can understand the purpose and ideas behind the website.
-- **As a user**, I want to access instructions on the homepage, so I can easily learn how to use the website.
+- **As a user**, I want to read the website introduction on the homepage, so I can understand the purpose and ideas behind the website. **(Could Have)**
+- **As a user**, I want to access instructions on the homepage, so I can easily learn how to use the website. **(Could Have)**
 
 ### Epic 3: Navigation & Layout
 As a user, I want a smooth navigation experience across the site, so I can access features easily.
 
-- **As a user**, I want to find a navigation menu, so I can easily move between different sections of the website.
-- **As a user**, I want to access social links, so I can contact or learn more about the developer.
-- **As a user**, I want to click the website logo, so I can quickly return to the homepage from any page.
+- **As a user**, I want to find a navigation menu, so I can easily move between different sections of the website. **(Must Have)**
+- **As a user**, I want to access social links, so I can contact or learn more about the developer. **(Should Have)**
+- **As a user**, I want to click the website logo, so I can quickly return to the homepage from any page. **(Should Have)**
 
 ### Epic 4: My Journal
 As a user, I want to view and manage my journal entries.
 
-- **As a user**, I want to have an overview of all my journal entries, so I can easily access and manage them.
-- **As a user**, I want to create a new journal entry, so I can document my thoughts and moods.
-- **As a user**, I want to update my journal entries, so I can make corrections.
-- **As a user**, I want to delete any of my journal entries, so I can remove content that I don't want to keep.
-- **As a user**, I can mark journal entries as public, so I can share my pain or achievements with the community anonymously.
+- **As a user**, I want to have an overview of all my journal entries, so I can easily access and manage them. **(Must Have)**
+- **As a user**, I want to create a new journal entry, so I can document my thoughts and moods. **(Must Have)**
+- **As a user**, I want to update my journal entries, so I can make corrections. **(Must Have)**
+- **As a user**, I want to delete any of my journal entries, so I can remove content that I don't want to keep. **(Must Have)**
+- **As a user**, I can mark journal entries as public, so I can share my pain or achievements with the community anonymously. **(Must Have)**
 
 ### Epic 5: Community Stories
 As a user, I want to connect with others through shared experiences.
 
-- **As a user**, I want to read stories shared by other community members, so I can feel connected, find inspiration, or gain reassurance that I am not alone in my experiences.
+- **As a user**, I want to read stories shared by other community members, so I can feel connected, find inspiration, or gain reassurance that I am not alone in my experiences. **(Must Have)**
 
 ### Epic 6: Administrator Controls
 As an administrator, I want to manage and monitor content, so I can maintain a safe environment.
 
-- **As an administrator**, I can update the homepage content, so that I can ensure the information and instructions presented to users are current and accurate.
-- **As an administrator**, I can review and approve user stories before they are published on the Community Stories page, so that I can prevent unsafe content from being shared with the community.
-- **As an administrator**, I can update published user stories, so that I can make necessary edits or corrections to the content that has been shared.
-- **As an administrator**, I can delete published user stories, so that I can remove any content that violates the platform’s rules after it has been published.
+- **As an administrator**, I can update the homepage content, so that I can ensure the information and instructions presented to users are current and accurate.  **(Could Have)**
+- **As an administrator**, I can review and approve user stories before they are published on the Community Stories page, so that I can prevent unsafe content from being shared with the community. **(Should Have)**
+- **As an administrator**, I can update published user stories, so that I can make necessary edits or corrections to the content that has been shared.  **(Should Have)**
+- **As an administrator**, I can delete published user stories, so that I can remove any content that violates the platform’s rules after it has been published.  **(Must Have)**
+
+All **"Won't Have"** categories have been placed in the **Future Features** section of this documentation. This ensures that our current focus remains on delivering the most critical functionalities while allowing for future enhancements to be considered later.
 
 ## Strategy 
 
@@ -123,7 +125,7 @@ The Journey website is designed with a clear and consistent structure that enhan
 ### User Flow
 - **Homepage to Journaling:** Users start on the homepage, where they are introduced to the app. From here, they can easily log in or register and navigate to My Journey page where they can create a new journal entry or access their existing entries.
 - **Journal Entry Management:** Users can manage their journal entries from the My Journey dashboard. They can create, edit, or delete entries, with the interface providing immediate feedback on successful actions or alerting users in case of any issues.
-- **Anonymous Sharing:** When marking an entry as public, users go through a confirmation process that ensures their story will be shared anonymously with the community. This ensures that users can share their experiences without fear of identity exposure.
+- **Anonymous Sharing:** Users can mark their journal entries for sharing with the community without fear of disclosing their identity. 
 - **Form Validation:** The forms for creating or editing journal entries include validation checks, alerting users to issues such as missing content or invalid inputs before submission.
 - **Deletion Confirmation:** When a user requests to delete a journal entry, a delete confirmation will appear, asking the user to confirm the deletion. This extra step ensures that entries are not accidentally deleted.
 
@@ -164,6 +166,24 @@ The Surface design of the Journey website creates a warm, natural, and welcoming
 - **[Sacramento](https://fonts.google.com/specimen/Sacramento)** - A beautiful handwriting font from Google Fonts, Sacramento is used exclusively for the website logo. Its elegant style captures the essence of writing by hand, making it a perfect representation of journaling experience.
 - **[Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono)** - This typewriter style font is used for headers, complimenting the journaling theme. While maintaining a clear and readable style, Cutive Mono adds a nostalgic touch that reminds users of old-school typewritten books.
 - **[Work Sans](https://fonts.google.com/specimen/Work+Sans)** - As the general-purpose font for body text, Work Sans offers a clean and modern reading experience. Its slightly rounded edges and simple style make it easy on the eyes, while still carrying a subtle hint of the typewriter influence from Cutive Mono, ensuring a smooth visual transition.
+
+## Security
+
+Security is very important in the Journey journaling app to keep user information safe. Here are the main ways that the app protects data:
+
+1. **User Authentication**:
+   - The app uses [Django Allauth](https://docs.allauth.org/en/latest/index.html) for managing user accounts. This tool helps users create accounts, log in, and log out securely. It makes sure that only you can access your journal.
+
+2. **CSRF Tokens**:
+   - CSRF stands for Cross-Site Request Forgery. This means that when you submit a form, like when creating or editing an entry, the app checks for a special code. This helps verify that the action is coming from you and not someone else pretending to be you.
+
+3. **Defensive Design**:
+   - The app is designed to be safe and secure:
+     - **Access Restrictions**: You cannot access, edit, or delete journal entries unless you are logged in. This keeps your personal thoughts and experiences private and safe from anyone who shouldn't see them.
+     - **Ownership Verification**: You can only read, change or remove your own journal entries. The app checks that you are the owner before allowing any access or modifications. This prevents anyone from editing or deleting something that isn’t theirs.
+
+By putting these security measures in place, Journey creates a safe space for users to write and share thoughts without worrying about their privacy.
+
 
 ## Features
 
