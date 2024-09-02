@@ -10,7 +10,7 @@ Stories
 
 {% if stories_list %}
     {% for story in stories_list %}
-        <article class="card container-width m-auto mb-5">
+        <div class="card container-width m-auto mb-5">
             <div class="card-header green-header">
                 <p>
                     <small>{{ story.published_on|date:"d M Y, g:i A" }}</small>
@@ -19,7 +19,7 @@ Stories
             <div class="card-body">
                 <p>{{ story.content }}</p>
             </div>
-        </article>
+        </div>
     {% endfor %}
 {% else %}
     <p class="text-center">No stories available at this time.</p>
