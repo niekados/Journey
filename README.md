@@ -280,6 +280,136 @@ Additionally, the MoSCoW prioritization method was employed, which helped catego
 
 This approach enabled better organization, focus, and responsiveness to changing requirements during the development of Journey.
 
+## Deployment
+
+The Journey app was developed using the GitPod IDE, and the code was managed with Git version control and stored in a GitHub repository. Below are the steps taken to deploy the app successfully to Heroku:
+
+### Step 1: Prepare the Code for Deployment
+
+1. **Install Gunicorn**:
+   - Install Gunicorn, a WSGI HTTP server, using the following command:
+     ```bash
+     pip3 install gunicorn~=20.1
+     ```
+   - Update the `requirements.txt` file to include Gunicorn:
+     ```bash
+     pip3 freeze --local > requirements.txt
+     ```
+
+2. **Set Up the Procfile**:
+   - Create a file named `Procfile` in the root directory of the project, containing the following line to start the Gunicorn server:
+     ```
+     web: gunicorn journey.wsgi
+     ```
+
+3. **Update Django Settings**:
+   - In the `journey/settings.py` file, set the `DEBUG` constant to `False` for security reasons.
+   - Append the `.herokuapp.com` hostname to the `ALLOWED_HOSTS` list:
+     ```python
+     ALLOWED_HOSTS = ['.herokuapp.com']
+     ```
+
+4. **Connect the Database**:
+   - Create a PostgreSQL database using Code Institute's SQL platform.
+   - Create a file named `env.py` at the top level of the project:
+     - In `env.py`, import the 'os':
+       ```python
+       import os
+       ```
+     - Set environment variables for the database URL and the secret key:
+       ```python
+       os.environ.setdefault("DATABASE_URL", "<your-database-URL>")
+       os.environ.setdefault("SECRET_KEY", "<your-secret-key>")
+       ```
+     - Make sure to add `env.py` to the `.gitignore` file to keep it safe from being pushed to GitHub.
+   - Install the required packages to connect to the PostgreSQL database:
+     ```bash
+     pip3 install dj-database-url~=0.5 psycopg2~=2.9
+     ```
+   - Update the `requirements.txt` file again.
+   - In `journey/settings.py`, import the required packages and connect the settings file to the `env.py` file:
+     ```python
+     import os
+     import dj_database_url
+     if os.path.isfile('env.py'):
+         import env
+     ```
+   - Update the `DATABASES` configuration to use the environment variable for the database connection:
+     ```python
+     DATABASES = {
+         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+     }
+     ```
+   - Set the `SECRET_KEY` variable with:
+     ```python
+     SECRET_KEY = os.environ.get('SECRET_KEY')
+     ```
+   - Create database tables with:
+      ```bash
+      python3 manage.py migrate
+      ```
+   - Create a superuser with admin access to the database:
+      ```bash
+      python3 manage.py createsuperuser
+      ```
+
+### Step 2: Create the Heroku App
+
+1. **Create a New Heroku App**:
+   - Navigate to the Heroku dashboard and create a new app with a unique name, by selecting a region closest to your location.
+
+2. **Configure Settings**:
+   - In the app’s settings tab, set the Config Vars:
+     - `DISABLE_COLLECTSTATIC` to `1` to prevent issues during the deployment process related to static files.
+     - `DATABASE_URL`: Set this with the value of the database URL copied from the SQL platform.
+     - `SECRET_KEY`: Set this with the value of the secret key created in the `env.py` file.
+
+### Step 3: Deploying to Heroku
+
+1. **Connect the GitHub Repository**:
+   - Access the deploy tab on the Heroku app, search for the GitHub repository, and connect it to the Heroku app.
+
+2. **Manual Deployment**:
+   - Manually deploy the `main` branch of the repository from the Heroku dashboard.
+
+### Step 4: Serving Static Files
+
+1. **Install WhiteNoise**:
+   - To properly serve static files, install the WhiteNoise package:
+     ```bash
+     pip3 install whitenoise~=5.3.0
+     ```
+   - Update the `requirements.txt` to include WhiteNoise.
+
+2. **Wire up MIDDLEWARE**
+   - In `journey/settings.py` add MIDDLEWARE, just below 'SecurityMiddleWare':
+      ```python
+      'whitenoise.middleware.WhiteNoiseMiddleware',
+      ```
+
+3. **Set Up the Static Files Directory**:
+   - In `journey/settings.py`, define the static files directory with:
+     ```python
+     STATIC_URL = '/static/'
+     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+     ```
+
+4. **Run Collectstatic Command**:
+   - Run the following command to collect all static files:
+     ```bash
+     python3 manage.py collectstatic
+     ```
+
+5. **Craete runtime.txt**:
+   - Check python version with `python3 -V`
+   - Look up Heroku-supported runtimes closest to the one in your IDE.
+   - Create runtime.txt and add the Python version from the Heroku-supported runtimes closest to your IDE.
+
+4. **Final Deployment Steps**:
+   - Update the `DISABLE_COLLECTSTATIC` environment variable to null in the Heroku settings.
+   - Perform another manual deployment to ensure all changes are live.
+
 ## Technologies Used
 
 Journey utilizes a range of technologies and libraries to create a seamless user experience. Here’s a list of the key technologies used:
