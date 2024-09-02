@@ -5,22 +5,22 @@ Home
 {% endblock %}
 
 {% block content %}
-    <div class="container m-auto container-width">
+<div class="container m-auto container-width">
+
+    <!-- Introduction Section -->
+    <section>
         <h1 class="text-center m-5">Welcome to Journey</h1>
-        
-        <!-- Introduction Section -->
-        <section>
-            <div>
-                {{ home_content.introduction|safe }}  
-            </div>
-        </section>
-        
-        <!-- Instructions Section -->
-        <section>
-            <h2 class="text-center m-5">How Journey works</h2>
-            <div class="mb-5">
-                {{ home_content.instructions|safe }} 
-            </div>
-        </section>
-    </div>
+        <div>
+            {{ home_content.introduction|safe }}
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section>
+        <h2 class="text-center m-5">How Journey works</h2>
+        <div class="mb-5">
+            {{ home_content.instructions|safe }}
+        </div>
+    </section>
+</div>
 {% endblock %}
