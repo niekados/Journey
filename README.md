@@ -18,9 +18,6 @@
     - [Colours](#colours)
 - [Security](#security)
 - [Features](#features)
-    - [Feature1](#feature-1)
-    - [Feature2](#feature-2)
-    - [Feature3](#feature-3)
 - [Future Features](#future-features)
 - [Database Schema](#database-schema)
   -[Entity Relationship Diagram](#entity-relationship-diagram)
@@ -167,6 +164,58 @@ The Surface design of the Journey website creates a warm, natural, and welcoming
 - **[Sacramento](https://fonts.google.com/specimen/Sacramento)** - A beautiful handwriting font from Google Fonts, Sacramento is used exclusively for the website logo. Its elegant style captures the essence of writing by hand, making it a perfect representation of journaling experience.
 - **[Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono)** - This typewriter style font is used for headers, complimenting the journaling theme. While maintaining a clear and readable style, Cutive Mono adds a nostalgic touch that reminds users of old-school typewritten books.
 - **[Work Sans](https://fonts.google.com/specimen/Work+Sans)** - As the general-purpose font for body text, Work Sans offers a clean and modern reading experience. Its slightly rounded edges and simple style make it easy on the eyes, while still carrying a subtle hint of the typewriter influence from Cutive Mono, ensuring a smooth visual transition.
+
+## Features
+
+Journey features are designed to facilitate personal reflections while ensuring user privacy and community engagement. Below is an overview of the main functionalities of the app:
+
+### Navigation Bar
+- **Unregistered Users**: The navigation bar displays links to the Home page and Stories page, along with options to register or sign in if the user is not logged in.
+- **Logged-in Users**: When users are logged in, they have access to the Home page, Stories page, and Journal page. The navigation bar will then display a logout link.
+
+### Home Page
+- **Access for Unregistered Users**: The Home page is accessible to everyone, allowing unregistered users to explore the app.
+- **Sections**:
+  - **Introduction**: Describes the idea behind Journey, encouraging personal reflection and growth through journaling.
+  - **Instructions**: Provides guidance on how to use the app.
+
+### Stories Page
+- **Community Stories**: This page displays journal entries that users have chosen to publish publicly. It is accessible to both registered and unregistered users. Each story is stripped of any identifying user information, showcasing only the content and the date it was published.
+
+### Journal Page (Logged-in Users Only)
+- **User Privacy**: Each user’s journal entries are private and only accessible by the logged-in user. Admins do not have access to view or manipulate user journal entries.
+- **Search Functionality**: A search box allows users to easily find specific journal entries by keywords.
+- **Add Entry Button**: Users can create new journal entries using the "New Entry" button.
+- **List of Journal Entries**: Displays user entries in a single column for easy scrolling. Each entry is clickable, leading to a detailed view.
+
+### Add Journal Entry Page
+- **Entry Form**:
+  - **How do I feel today?**: Users can select their mood from a dropdown list containing three options: Happy, Normal, and Sad.
+  - **Sum up my day in 5 words**: A field for users to summarize their day in 5 words or less.
+  - **My day's story**: An area for users to write the main content of their diary entry.
+  - **What am I thankful for today?**: Users can list things they are grateful for.
+  - **How can I be better tomorrow?**: A section for users to express what they would like to do better tomorrow.
+  - **Share this entry with the community?**: An option to tick if the user wants to share their entry in the community stories.
+
+### Edit Journal Entry Page
+- The layout is the same as the New Entry form, allowing users to modify their existing journal entries.
+
+### Delete Journal Entry Confirmation
+- When users click the delete button, a confirmation page appears, requiring them to confirm their choice to delete the entry.
+
+### Django Admin Panel
+- The Django admin panel allows for management of the app's content but restricts access to journal entries. Admins can:
+  - **Manage Home Content**: Update the instructions and change the introduction displayed on the Home page to ensure information is relevant.
+  - **Approve Stories**: Review story entries for publication in the community stories. Admins can see only the journal content field of each entry, without access to other fields or user information. This ensures privacy and security, maintaining the core highlight of the app.
+
+### Authorization Pages
+- **403 Page**: This page informs users when they attempt to access restricted content, with a button to return to the home page.
+- **Sign-out Confirmation Page**: A page that confirms the user’s choice to log out of the application.
+- **Registration Page**: A page where new users can sign up for an account.
+- **Sign-in Page**: A page where existing users can log into their accounts.
+
+### Footer
+- **Social Links**: The footer includes links to the developer's social media profiles: GitHub, Twitter, and LinkedIn.
 
 ## Future Features
 

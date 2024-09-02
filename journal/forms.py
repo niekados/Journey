@@ -20,7 +20,7 @@ class JournalEntryForm(forms.ModelForm):
         labels = {
             "mood": "How do I feel today?",
             "day_description": "Sum up my day in 5 words.",
-            "content": "My day's story",
+            "content": "My day's story.",
             "grateful_for": "What am I thankful for today?",
             "improve_on": "How can I be better tomorrow?",
             "is_public": "Share this entry with the community?",
