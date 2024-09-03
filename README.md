@@ -484,3 +484,6 @@ I want to thank [Code Institute](https://www.codeinstitute.net) for the learning
 
 These resources made a significant difference in my learning, and I'm grateful for the guidance they provided.
 
+## Testing 
+
+[Please follow this link for TESTING.md](TESTING.md)
