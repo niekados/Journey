@@ -268,5 +268,49 @@ As an administrator, I want to manage and monitor content, so I can maintain a s
 
 ## Manual Testing
 
+| Test                                            | Expected Result                                                                    | Pass/Fail |
+|-------------------------------------------------|-----------------------------------------------------------------------------------|-----------|
+| Testing navbar links                            | All links should navigate to the correct sections.                                | PASS      |
+| Testing footer links                            | All footer links open in a new tab and lead to the correct page.                 | PASS      |
+| Form validation for new journal entries        | Mandatory fields are validated, while optional fields can remain blank.           | PASS      |
+| User can register                               | User successfully creates an account and is logged into the journal page.         | PASS      |
+| User can sign in                                | After signing in, the user is redirected to their journal dashboard and receives a confirmation message. | PASS      |
+| User can sign out                               | User is successfully logged out and redirected to the homepage.                   | PASS      |
+| Delete button confirmation                      | Clicking the delete button redirects the user to a confirmation page.             | PASS      |
+| Confirm deletion of journal entry               | The entry is deleted, and the user is redirected to the My Journal page.          | PASS      |
+| Cancel deletion of journal entry                | The entry remains intact, and the user is redirected back to the My Journal page. | PASS      |
+| Clicking the journal entry card opens details page | The details of the selected entry are displayed correctly.                        | PASS      |
+| Edit and delete buttons in entry details       | Both buttons are available to edit or delete the entry.                          | PASS      |
+| Not logged-in user can't access journal entries | User is redirected to the Sign In page when trying to access those entries.      | PASS      |
+| Not logged-in user can access home and stories | The home page and stories page are accessible without login.                    | PASS      |
+| Django messages after actions                   | Correct messages are displayed after user actions, confirming the action taken.   | PASS      |
+| Search field functionality                      | Relevant entries are returned when searching; leaving the field empty returns all entries. | PASS      |
+| User can add journal entry                      | A new entry is created and appears in the journal list.                          | PASS      |
+| User can edit journal entry                     | The entry is successfully updated with the new information.                       | PASS      |
+| User can view journal entry details             | All relevant information for the entry is visible and correctly displayed.       | PASS      |
+| User can share journal entry with community     | The journal entry is tagged as "published" and awaits admin approval.            | PASS      |
+| Published stories wait for admin approval       | Stories remain hidden from public view until they are approved by an admin.      | PASS      |
+| Error handling on unauthorized delete           | An appropriate error message is shown when attempting to delete an entry not owned by the user. | PASS      |
+| Error handling on unauthorized access           | The user receives a 403 error when attempting to access an entry that they do not own. | PASS      |
+
+
+The Journey app was tested across various devices and browsers to ensure compatibility and responsiveness. The following devices have been used for testing:
+
+### Devices Tested
+- **iPhone 12**
+- **iPhone 14 Pro**
+- **Samsung Galaxy A54**
+- **Mac Mini**
+- **MacBook Air**
+- **MacBook Air M2**
+
+### Browsers Tested
+- **Safari**
+- **Google Chrome**
+- **Firefox**
+- **Brave Browser**
+
+Although tablets were not available for testing, the app was also evaluated using developer tools to simulate tablet screen sizes and ensure a responsive design.
+
 ## Bugs
 

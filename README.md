@@ -1,5 +1,7 @@
 # Journey
 
+<img src="documentation/wireframes/am-i-responsive.png" alt="Am I Responsive" style="width:90%;">
+
 "Journey" is a journalling app with a twist. This application, built using the Django framework, allows users to journal their moods, daily events and their progress. Embark on a journaling journey where you can reflect on your experiences and personal growth whether you want to record your thoughts or track your mood and achievements. This app features a unique function where users can anonymously let go of their worries or share their happy moments by publishing their diary entries (stories).
 
 **[Link to the deployed application](https://journey-journaling-app-57914ad778ff.herokuapp.com/)**
