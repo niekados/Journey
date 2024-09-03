@@ -314,3 +314,46 @@ Although tablets were not available for testing, the app was also evaluated usin
 
 ## Bugs
 
+- ### Adjust `delete_journal_entry` View
+
+**Bug Description**:  
+There was an issue in the `delete_journal_entry` view that allowed unauthorized users to access the delete confirmation template for journal entries they did not own and posed a security risk.
+
+**Bug Fix**:  
+The code was adjusted to ensure that only the owner of the journal entry can access the delete confirmation template.
+
+- ### Exclude Journal Entry in Admin Story Section
+
+**Bug Description**:  
+In the admin interface, the entry author's name was displayed in the Stories section, which revealed the author's identity and was not part of the design.
+
+**Bug Fix**:  
+The following changes were made to ensure the journal entry author’s name is not displayed in the admin Stories section:
+
+1. Updated the `__str__` method for the JourneyEntry model to return the story description with the date, instead of the authors name.
+2. Excluded `journal_entry` from being displayed in `StoryEntryAdmin`.
+
+- ### Correct Journal Entry Confirm Delete Template Extension
+
+**Bug Description**:  
+The `journal_entry_confirm_delete` template had an incorrect file extension of `.html.html`, which caused issues when trying to render the template.
+
+**Bug Fix**:  
+The file extension was corrected by reverting it to a single `.html` extension.
+
+- ### Change Mood Field Type in Model
+
+**Bug Description**:  
+The `mood` field in the model was incorrectly set as an `IntegerField`, which was an oversight from when the model originally used numerical selections for choices. 
+
+**Bug Fix Implementation**:  
+The field type was changed from `IntegerField` to `CharField` to accommodate string choices instead of numbers, reflecting the updated design requirements.
+
+- ### Resolve Circular Import Issue Between Models
+
+**Bug Description**:  
+There was a circular import issue between the `StoryEntry` and `JournalEntry` models. This occurred because both models attempted to import each other, leading to an infinite loop.
+
+**Bug Fix Implementation**:  
+To resolve this circular import problem, a lazy loading was utilized. By using Django’s app registry, the `apps.get_model()` function was implemented to import the `StoryEntry` model only when it was needed, rather than at the top of the file.
+
