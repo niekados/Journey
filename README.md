@@ -125,7 +125,7 @@ The Journey website is designed with a clear and consistent structure that enhan
 - **Authentication Pages:** Separate pages for login and registration, ensuring users can easily access their accounts.
 
 ### User Flow
-- **Homepage to Journaling:** Users start on the homepage, where they are introduced to the app. From here, they can easily log in or register and navigate to My Journey page where they can create a new journal entry or access their existing entries.
+- **Homepage to Journaling:** Users start on the homepage, where they are introduced to the app. From here, they can easily log in or register and navigate to the My Journey page where they can create a new journal entry or access their existing entries.
 - **Journal Entry Management:** Users can manage their journal entries from the My Journey dashboard. They can create, edit, or delete entries, with the interface providing immediate feedback on successful actions or alerting users in case of any issues.
 - **Anonymous Sharing:** Users can mark their journal entries for sharing with the community without fear of disclosing their identity. 
 - **Form Validation:** The forms for creating or editing journal entries include validation checks, alerting users to issues such as missing content or invalid inputs before submission.
@@ -160,13 +160,13 @@ The Surface design of the Journey website creates a warm, natural, and welcoming
 <img src="documentation/wireframes/colors.png" alt="Colours" style="width:50%;">
 
 - **#FFC9B9** - This soft, warm colour represents the sun setting at the end of a day, evoking a sense of calm and reflection. It’s used to create a soothing backdrop, symbolizing the peaceful moments when users sit down to journal.
-- **#0E3B02** - A deep green shade, reminding of forest treetops and the rich greenness of moss. This color adds depth and a connection to nature, grounding the user experience in a sense of tranquility and growth. It has a contrast ratio of 12.76 with white (#FFFFFF), 8.70 with #FFC9B9, and 8.02 with #B7D799.
+- **#0E3B02** - A deep green shade, reminding of forest treetops and the rich greenness of moss. This colour adds depth and a connection to nature, grounding the user experience in a sense of tranquillity and growth. It has a contrast ratio of 12.76 with white (#FFFFFF), 8.70 with #FFC9B9, and 8.02 with #B7D799.
 - **#B7D799** - A lighter green is used for accents. This colour highlights elements and draws attention in a way that feels fresh, complementing the deeper green tones.
 
 ### Typography
 
-- **[Sacramento](https://fonts.google.com/specimen/Sacramento)** - A beautiful handwriting font from Google Fonts, Sacramento is used exclusively for the website logo. Its elegant style captures the essence of writing by hand, making it a perfect representation of journaling experience.
-- **[Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono)** - This typewriter style font is used for headers, complimenting the journaling theme. While maintaining a clear and readable style, Cutive Mono adds a nostalgic touch that reminds users of old-school typewritten books.
+- **[Sacramento](https://fonts.google.com/specimen/Sacramento)** - A beautiful handwriting font from Google Fonts, Sacramento is used exclusively for the website logo. Its elegant style captures the essence of writing by hand, making it a perfect representation of the journaling experience.
+- **[Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono)** - This typewriter-style font is used for headers, complimenting the journaling theme. While maintaining a clear and readable style, Cutive Mono adds a nostalgic touch that reminds users of old-school typewritten books.
 - **[Work Sans](https://fonts.google.com/specimen/Work+Sans)** - As the general-purpose font for body text, Work Sans offers a clean and modern reading experience. Its slightly rounded edges and simple style make it easy on the eyes, while still carrying a subtle hint of the typewriter influence from Cutive Mono, ensuring a smooth visual transition.
 
 ## Security
@@ -300,7 +300,7 @@ These user stories were then used on the project board within GitHub Projects, w
 
 Each user story included acceptance criteria to define what must be completed for the story to be considered done. User stories were added to the project board through the GitHub Issues section, allowing for easy tracking and updates. The project board can be viewed [here](https://github.com/users/niekados/projects/5).
 
-Additionally, the MoSCoW prioritization method was employed, which helped categorize user stories into four groups:
+Additionally, the "MoSCoW" prioritization method was employed, which helped categorize user stories into four groups:
 - **Must have**: Critical features for the app's success.
 - **Should have**: Important features that add significant value but are not critical.
 - **Could have**: Nice-to-have features that can enhance the user experience if time allows.
@@ -476,7 +476,7 @@ Journey utilizes a range of technologies and libraries to create a seamless user
 
 - **Favicon Generator**: A tool to create favicons from FontAwesome icons. [Favicon Generator](https://gauger.io/fonticon/)
 
-- **Colour Contrast Checker**: A tool to check color contrast for accessibility. [Learn more](https://colourcontrast.cc)
+- **Colour Contrast Checker**: A tool to check colour contrast for accessibility. [Learn more](https://colourcontrast.cc)
 
 ## Credits
 

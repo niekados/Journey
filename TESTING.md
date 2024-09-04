@@ -22,9 +22,9 @@ The HTML code for the Journey app was validated using the [W3C Markup Validation
   - URI validation was employed for all pages that did not require user login.
   - Direct input validation was used for pages that required a login. The HTML code was extracted by viewing the page's source directly. 
 
-During the validation process, a few warnings were noted, specifically regarding the "Possible misuse of aria-label." This warning was due to the use of aria-labels for FontAwesome icons. 
+During the validation process, a few warnings were noted, specifically regarding the "Possible misuse of `aria-label`." This warning was due to the use of aria labels for FontAwesome icons. 
 
-Despite the warnings, the errors were intentionally left as they are, as the use of aria-labels serves a purpose. When creating a journal entry, users select their mood for the day, which is later represented by FontAwesome emojis on the journal cards. Using emojis to convey mood is an integral part of the design. Not including the aria-label would result in assistive technology users missing important information regarding their mood selection.
+Despite the warnings, the errors were intentionally left as they were, as the use of `aria-label` serves a purpose. When creating a journal entry, users select their mood for the day, which is later represented by FontAwesome emojis on the journal cards. Using emojis to convey mood is an integral part of the design. Not including the `aria-label` would result in assistive technology users missing important information regarding their mood selection.
 
 - Home Page
     - <img src="documentation/validation/html-home.png" alt="Home page" style="width:70%;">
@@ -254,7 +254,7 @@ As a user, I want to connect with others through shared experiences.
 As an administrator, I want to manage and monitor content, so I can maintain a safe environment.
 
 - **As an administrator**, I can update the homepage content, so that I can ensure the information and instructions presented to users are current and accurate.
-    - ✔ The administrator can update homepage content in the admin panel.
+    - ✔ The administrator can update the homepage content in the admin panel.
 
 - **As an administrator**, I can review and approve user stories before they are published on the Community Stories page, so that I can prevent unsafe content from being shared with the community.
     - ✔ The administrator can review and approve user stories in the admin panel.
@@ -279,16 +279,16 @@ As an administrator, I want to manage and monitor content, so I can maintain a s
 | Delete button confirmation                      | Clicking the delete button redirects the user to a confirmation page.             | PASS      |
 | Confirm deletion of journal entry               | The entry is deleted, and the user is redirected to the My Journal page.          | PASS      |
 | Cancel deletion of journal entry                | The entry remains intact, and the user is redirected back to the My Journal page. | PASS      |
-| Clicking the journal entry card opens details page | The details of the selected entry are displayed correctly.                        | PASS      |
+| Clicking the journal entry card opens the details page | The details of the selected entry are displayed correctly.                        | PASS      |
 | Edit and delete buttons in entry details       | Both buttons are available to edit or delete the entry.                          | PASS      |
-| Not logged-in user can't access journal entries | User is redirected to the Sign In page when trying to access those entries.      | PASS      |
-| Not logged-in user can access home and stories | The home page and stories page are accessible without login.                    | PASS      |
+| Users who are not logged in cannot access journal entries | The user is redirected to the Sign In page when trying to access those entries.      | PASS      |
+| Users who are not logged in can access the home page and stories | The home page and stories page are accessible without login.                    | PASS      |
 | Django messages after actions                   | Correct messages are displayed after user actions, confirming the action taken.   | PASS      |
 | Search field functionality                      | Relevant entries are returned when searching; leaving the field empty returns all entries. | PASS      |
-| User can add journal entry                      | A new entry is created and appears in the journal list.                          | PASS      |
-| User can edit journal entry                     | The entry is successfully updated with the new information.                       | PASS      |
-| User can view journal entry details             | All relevant information for the entry is visible and correctly displayed.       | PASS      |
-| User can share journal entry with community     | The journal entry is tagged as "published" and awaits admin approval.            | PASS      |
+| The user can add a journal entry                      | A new entry is created and appears in the journal list.                          | PASS      |
+| The user can edit a journal entry                     | The entry is successfully updated with the new information.                       | PASS      |
+| The user can view journal entry details             | All relevant information for the entry is visible and correctly displayed.       | PASS      |
+| The user can share a journal entry with the community     | The journal entry is tagged as "published" and awaits admin approval.            | PASS      |
 | Published stories wait for admin approval       | Stories remain hidden from public view until they are approved by an admin.      | PASS      |
 | Error handling on unauthorized delete           | An appropriate error message is shown when attempting to delete an entry not owned by the user. | PASS      |
 | Error handling on unauthorized access           | The user receives a 403 error when attempting to access an entry that they do not own. | PASS      |
@@ -317,7 +317,7 @@ Although tablets were not available for testing, the app was also evaluated usin
 - ### Adjust `delete_journal_entry` View
 
 **Bug Description**:  
-There was an issue in the `delete_journal_entry` view that allowed unauthorized users to access the delete confirmation template for journal entries they did not own and posed a security risk.
+An issue in the delete_journal_entry view allowed unauthorized users to access the delete confirmation template for journal entries they didn’t own, although they couldn’t delete the entry from the database.
 
 **Bug Fix**:  
 The code was adjusted to ensure that only the owner of the journal entry can access the delete confirmation template.
@@ -330,7 +330,7 @@ In the admin interface, the entry author's name was displayed in the Stories sec
 **Bug Fix**:  
 The following changes were made to ensure the journal entry author’s name is not displayed in the admin Stories section:
 
-1. Updated the `__str__` method for the JourneyEntry model to return the story description with the date, instead of the authors name.
+1. Updated the `__str__` method for the JourneyEntry model to return the story description with the date, instead of the author's name.
 2. Excluded `journal_entry` from being displayed in `StoryEntryAdmin`.
 
 - ### Correct Journal Entry Confirm Delete Template Extension
