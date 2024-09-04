@@ -58,7 +58,7 @@ As a user, I want to understand the purpose of Journey.
 As a user, I want a smooth navigation experience across the site, so I can access features easily.
 
 - **As a user**, I want to find a navigation menu, so I can easily move between different sections of the website. **(Must Have)**
-- **As a user**, I want to access social links, so I can contact or learn more about the developer. **(Should Have)**
+- **As a user**, I want to access social links, so I can contact or learn more about the developer. **(Must Have)**
 - **As a user**, I want to click the website logo, so I can quickly return to the homepage from any page. **(Should Have)**
 
 ### Epic 4: My Journal
@@ -485,6 +485,16 @@ I found great support in YouTube video tutorials that helped me understand the D
 I want to thank [Code Institute](https://www.codeinstitute.net) for the learning materials provided, where I am a student. Their organised structure, development tools, and clear instructions have been essential for this project.
 
 These resources made a significant difference in my learning, and I'm grateful for the guidance they provided.
+
+### A very special Thank You
+
+I want to say a special thank you to the people who were by my side when things seemed impossible, when I was about to fall down, when it was difficult to believe in myself and who joined me to celebrate when all became real and true:
+
+- Maria, thank you so much for being by my side, and reminding me that it's possible, giving a safe space when there was nowhere to go. For your patience in testing the project and giving good ideas on how to improve!
+- Maria's "Little Man" for all the good energy, chatter, and ideas generation and in the end become an inspiration for this project. Also thank you for saying "Link, you can do it!".
+- Mike, thank you for listening and helping to find doors in the walls that seemed to have no exit.
+- Ben, thank you for your support and for giving me time off work when I was running short on time with the project. And for your amazing responses: "Of course", "No problem at all". You've been a great help!
+- Kamil (cohort accommodator), thank you for the great tips and for hearing me out when things were slipping away.
 
 ## Testing 
 
