@@ -290,8 +290,16 @@ As an administrator, I want to manage and monitor content, so I can maintain a s
 | The user can view journal entry details             | All relevant information for the entry is visible and correctly displayed.       | PASS      |
 | The user can share a journal entry with the community     | The journal entry is tagged as "published" and awaits admin approval.            | PASS      |
 | Published stories wait for admin approval       | Stories remain hidden from public view until they are approved by an admin.      | PASS      |
+| Selected mood in the new journal entry is represented with the correct emoji icon in journal cards | The chosen mood is displayed as the correct emoji on the journal cards.| PASS     |
+| When updating home content in the admin panel, only the most recent content is displayed on the Home page | The latest content updates are visible on the Home page without displaying outdated information. | PASS      |
 | Error handling on unauthorized delete           | An appropriate error message is shown when attempting to delete an entry not owned by the user. | PASS      |
 | Error handling on unauthorized access           | The user receives a 403 error when attempting to access an entry that they do not own. | PASS      |
+
+For testing error handling, the following URLs were used to check whether other users or unregistered users could access or delete journal entries that do not belong to them:
+
+- To verify access to a journal entry that does not belong to the user: [https://journey-journaling-app-57914ad778ff.herokuapp.com/journal/15/](https://journey-journaling-app-57914ad778ff.herokuapp.com/journal/15/)
+  
+- To verify if an unauthorized user could delete someone else's journal entry: [https://journey-journaling-app-57914ad778ff.herokuapp.com/journal/delete/15/](https://journey-journaling-app-57914ad778ff.herokuapp.com/journal/delete/15/)
 
 
 The Journey app was tested across various devices and browsers to ensure compatibility and responsiveness. The following devices have been used for testing:
